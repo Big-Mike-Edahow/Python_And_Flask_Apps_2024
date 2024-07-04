@@ -1,0 +1,71 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Big Mike's Todos! 📋</h1>
+        <a href="{{ url_for('index') }}">Home 🏠</a>
+        <a href="{{ url_for('about') }}">About ℹ️</a>
+    </nav>
+    <main>
+        <section class="center">
+            <h1 class="headline-h1">Big Mike's Todo List 📝</h1>
+            <br>
+            <form method="post" action="/add">
+                <input type="text" name="todo" placeholder="Add a todo" required>
+                <button type="submit">Add</button>
+            </form>
+            <br>
+            <table class="center">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Created</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for todo in todos %}
+                    {% if todo[2] %}
+                    <tr>
+                        <td class="item-completed"><strike>{{ todo[1] }}</strike></td>
+                        <td><i>Created: {{ todo[3] }}</i></td>
+                        <td class="status-yes">Completed</td>
+                        <td>
+                            <button disabled>Complete</button>
+                            <a href="/delete?id={{ todo[0] }}"><button class="button-danger">Delete</button></a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td class="item-not-completed">{{ todo[1] }}</td>
+                        <td><i>Created: {{ todo[3] }}</i></td>
+                        <td class="status-no">Not Completed</td>
+                        <td>
+                            <a href="/complete?id={{ todo[0] }}"><button>Complete</button></a>
+                            <a href="/delete?id={{ todo[0] }}"><button class="button-danger">Delete</button></a>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 🐍</a></p>
+    </footer>
+</body>
+
+</html>

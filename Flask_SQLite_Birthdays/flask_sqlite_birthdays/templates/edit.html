@@ -1,0 +1,45 @@
+<!-- edit.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Edit</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Birthdays! 🎁</h1>
+        <a href="/">Home 🎲</a>
+        <a href="/about">About ❔</a>
+    </nav>
+    <main>
+        <section class="center">
+            <h1 class="headline-h1">Edit Birthday ✏️</h1>
+            <br>
+            <form method="POST">
+                <input type="hidden" name="id" value="{{ birthday[0] }}">
+                <label>Name: </label>
+                <input name="name" type="text" placeholder="Name" value="{{ birthday[1] }}">
+                <br>
+                <label>Month: </label>
+                <input name="month" type="number" placeholder="Month" max="12" value="{{ birthday[2] }}">
+                <br>
+                <label>Day: </label>
+                <input name="day" type="number" placeholder="Day" max="31" min="1" value="{{ birthday[3] }}">
+                <br><br>
+                <input class="button" type="submit" value="Update Birthday">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 🐍</a></p>
+    </footer>
+</body>
+
+</html>
+

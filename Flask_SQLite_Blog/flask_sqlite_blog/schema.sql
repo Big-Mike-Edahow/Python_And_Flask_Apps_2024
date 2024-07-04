@@ -1,0 +1,11 @@
+/* schema.sql */
+
+DROP TABLE IF EXISTS posts;
+
+CREATE TABLE posts (
+    id INTEGER PRIMARY KEY NOT NULL,
+    author VARCHAR(100) NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    content TEXT NOT NULL,
+    created TEXT DEFAULT CURRENT_TIMESTAMP
+);

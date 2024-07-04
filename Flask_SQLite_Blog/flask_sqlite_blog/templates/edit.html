@@ -1,0 +1,54 @@
+<!-- edit.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Edit</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Big Mike's Blog! ✍️</h1>
+        <a href="{{ url_for('index') }}">Home 🏠</a>
+        <a href="{{ url_for('create') }}">Create 🖊️</a>
+        <a href="{{ url_for('about') }}">About 💡</a>
+    </nav>
+    <main>
+        <section class="center">
+            <h1>Edit Post ✏️</h1>
+            <br>
+            {% for message in get_flashed_messages() %}
+            <div class="alert">{{ message }}</div>
+            {% endfor %}
+            <form method="post">
+                <label for="title">Title:</label>
+                <br>
+                <input type="text" name="title" placeholder="Post title"
+                    value="{{ request.form['title'] or post['title'] }}"></input>
+                <br>
+                <label for="author">Author:</label>
+                <br>
+                <input type="text" name="author" placeholder="Post author"
+                    value="{{ request.form['author'] or post['author'] }}"></input>
+                <br>
+                <label for="content">Post Content:</label>
+                <br>
+                <textarea name="content" placeholder="Post content" rows="3"
+                    cols="40">{{ request.form['content'] or post['content'] }}</textarea>
+                <br>
+                <button class="form-button" type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 🐍</a></p>
+    </footer>
+</body>
+
+</html>
+
