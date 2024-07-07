@@ -181,6 +181,7 @@ form label {
     color: black;
     background-color: rgb(226, 180, 203);
     border-radius: 5px;
+    text-decoration: none;
 }
 
 .button-danger:active {

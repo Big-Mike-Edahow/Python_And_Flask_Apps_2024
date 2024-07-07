@@ -42,7 +42,8 @@
                         <td id="content">{{ note[1] }}</td>
                         <td>
                             <a class="button" href="/edit?id={{ note[0] }}">Edit</a>
-                            <a href="/delete?id={{ note[0] }}"><button class="button-danger">Delete</button></a></td>
+                            <a class="button-danger" href="/delete?id={{ note[0] }}">Delete</a>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
