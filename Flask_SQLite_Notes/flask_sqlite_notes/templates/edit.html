@@ -25,6 +25,7 @@
             {% for message in get_flashed_messages() %}
             <div class="alert-danger">{{ message }}</div>
             {% endfor %}
+            <br>
             <form method="post">
                 <label for="content">Note Content: </label><br><br>
                 <textarea type="text" name="content" placeholder="Note content..." value="{{ request.form['content'] }}"

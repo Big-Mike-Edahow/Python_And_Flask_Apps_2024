@@ -22,6 +22,10 @@
         <section class="center">
             <h1 class="headline-h1">Add a New Note! 🆕</h1>
             <br><Br>
+            {% for message in get_flashed_messages() %}
+            <div class="alert-danger">{{ message }}</div>
+            {% endfor %}
+            <br>
             <form method="post">
                 <label for="content">Note Content: </label><br><br>
                 <textarea type="text" name="content" placeholder="Note content..." value="{{ request.form['content'] }}"
@@ -37,4 +41,3 @@
 </body>
 
 </html>
-

@@ -36,7 +36,7 @@ def create():
         content = request.form['content']
         if not content:
             flash('Content is required!')
-            return redirect(url_for('index'))
+            return render_template("create.html")
         conn.execute('INSERT INTO notes (content) VALUES (?)', (content,))
         conn.commit()
         conn.close()

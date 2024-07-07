@@ -102,9 +102,12 @@ td {
 }
 
 .alert-danger {
+    width: 500px;
     font-size: 1em;
     font-weight: 600;
-    margin: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     padding: 5px;
     color: black;
     background-color: rgb(226, 180, 203);
