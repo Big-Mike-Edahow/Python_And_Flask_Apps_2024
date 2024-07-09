@@ -1,0 +1,42 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <main>
+        <section class="center alert">
+            {% if not session['user'] %}
+            {{ session['notify'] }}
+            {% else %}
+            {{ session['greet'] }}
+            {% endif %}
+        </section>
+        <section class="center">
+            <br><br>
+            <h1 class="headline-h1">Welcome To GeekPython! 🐍</h1>
+            <br>
+            {% if session['user'] %}
+            <br>
+            <h2>Hi🖐, {{ session['user'] }}!</h2>
+            <br><br>
+            <a class="button" href="{{ url_for('remove') }}">Log out</a>
+            {% else %}
+            <br>
+            <h3>You Need to Register First!</h3>
+            <br><br>
+            <a class="button" href="{{ url_for('add') }}">Register</a>
+            {% endif %}
+            </div>
+    </main>
+</body>
+
+</html>

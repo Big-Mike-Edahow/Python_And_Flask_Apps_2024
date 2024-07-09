@@ -1,0 +1,34 @@
+<!-- add.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="stylesheet">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Register</title>
+</head>
+
+<body>
+    <main>
+        <section class="center alert">
+            {{ session['message'] }}
+        </section>
+        <section class="center">
+            <br><br>
+            <h1 class="headline-h1"> Add a user! 👤</h1>
+            <br><br>
+            <form action="/add" method="post">
+                <label class="form-label" for="name">Username</label>
+                <input class="form-control" id="name" name="username" type="text">
+                <br><br>
+                <button class="form-button" type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
+
