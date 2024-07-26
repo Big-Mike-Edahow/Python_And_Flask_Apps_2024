@@ -13,7 +13,6 @@ app.config["SECRET_KEY"] = "I like my summer traditions."
 def index():
     conn = sqlite3.connect('./data/database.db')
     curs = conn.cursor()
-
     drones = curs.execute("SELECT * FROM drones").fetchall()
     conn.close()
 
@@ -25,3 +24,4 @@ def about():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
