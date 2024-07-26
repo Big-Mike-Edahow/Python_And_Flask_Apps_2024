@@ -1,7 +1,7 @@
 # app.py
 # Flask Drones List App
 
-# Import required modules
+# Import required modules.
 from flask import Flask, render_template, url_for
 import sqlite3
 
