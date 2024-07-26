@@ -1,0 +1,54 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Top Best Selling Drone Comparison</h1>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('about') }}">About 🛈</a>
+    </nav>
+    <main>
+        <section>
+            <table class="center table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Flight Time (minutes)</th>
+                        <th>Sensor Size</th>
+                        <th>Weight (lbs)</th>
+                        <th>Top Speed</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for drone in drones %}
+                    <tr>
+                        <td>{{ drone[1] }}</td>
+                        <td>{{ drone[2] }}</td>
+                        <td>{{ drone[3] }}</td>
+                        <td>{{ drone[4] }}</td>
+                        <td>{{ drone[5] }} mph</td>
+                        <td>${{ drone[6] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 🐍</a></p>
+    </footer>
+</body>
+
+</html>
+

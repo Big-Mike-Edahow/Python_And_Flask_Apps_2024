@@ -1,0 +1,136 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #bad8e9;
+    /* Sets the background color to blue */
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    background-color: #F7F9FA;
+    border-bottom: 2px solid black;
+}
+
+nav a {
+    color:mediumblue;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+ nav h1 {
+    color: mediumblue;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+main {
+    position: relative;
+    top: 100px;
+    padding: 0 10px;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headline-h1 {
+    font-size: 3em;
+    font-weight: 600;
+    color: black;
+}
+
+table {  
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
+}
+
+th {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 10px;
+    padding: 10px;
+    background-color:aliceblue;
+    border-radius: 15px;
+}
+
+td {
+    font-size: 1.4em;
+    font-weight: 500;
+    margin: 7px;
+    padding: 7px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    /* Set the background color of odd rows to light gray. */
+    background-color: #c9c9c9;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+img {
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px black;
+}
+
+figcaption {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    background-color:  #F7F9FA;
+    border-top: 2px solid black;
+}
+
+footer>p {
+    font-size: 1.5em;
+    font-weight: 600;
+    font-style: italic;
+    color: black;
+}
+
+footer>p>a {
+    color: mediumblue;
+    text-decoration: none;
+}

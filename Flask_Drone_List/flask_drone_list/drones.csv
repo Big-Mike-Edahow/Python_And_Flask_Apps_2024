@@ -1,0 +1,9 @@
+name,flight_time,sensor_size,weight,top_speed,cost
+DJI Air 2S,31,1",1.31,42.5,999
+DJI Mavic 2 Pro,31,1",2,72,1599
+DJI Mavic 2 Zoom,31,1/2.3",1.995,72,1299
+DJI Phantom 4 RTK,30,1",8.68,72,6000
+Autel EVO Lite,40,1/2.3",1.807,64.8,999
+Skydio 2,23,1/2.3",1.709,58,999
+PowerVision PowerEgg X Wizard,30,1/2.3",1.896,60,1249
+Yuneec Typhoon H3,25,1",4.431,50,2599
