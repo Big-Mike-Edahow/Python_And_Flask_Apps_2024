@@ -1,0 +1,65 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home 🔢</a>
+        <h1>Flask Base64! 🧮</h1>
+        <a href="/about">About 🛈</a>
+    </nav>
+    <main>
+        {% if info %}
+
+        <section class="center">
+            <h1 class="info">{{ info }}</h1>
+        </section>
+
+        {% endif %}
+
+        {% if username %}
+
+        <section class="center">
+            <h1 class="headline-h1">Welcome {{ username }}!</h1>
+            <br>
+            <figure>
+                <img src="../static/images/Profile_Pic.jpg" alt="Profile pic" width="320px">
+            </figure>
+            <br>
+            <a class="button" href="/logout">Logout</a>
+        </section>
+
+        {% else %}
+
+        <section class="center">
+            <h1 class="headline-h1">Account Login</h1>
+            <br><br>
+            <form action="/" method="post">
+                <input type="text" name="username" required>
+                </br></br>
+                <input type="password" name="password" required>
+                </br></br>
+                <input class="form-button" type="submit" value="Login">
+            </form>
+            </br></br>
+            <a class="button" href="/register">Register here</a>
+        </section>
+
+        {% endif %}
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 🐍</a></p>
+    </footer>
+</body>
+
+</html>
+

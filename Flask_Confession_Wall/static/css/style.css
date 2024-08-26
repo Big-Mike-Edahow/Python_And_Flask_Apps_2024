@@ -1,0 +1,199 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    color: #f5f5f5;
+    background-color: #1a1a1a;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    background-color: #F7F9FA;
+    border-bottom: 2px solid black;
+}
+
+nav > h1 {
+    font-size: 36px;
+    font-weight: bold;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    padding-left: 50px;
+    color: black;
+}
+
+nav>a {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+main {
+    margin: 30px;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headline-h1 {
+    font-size: 3em;
+    font-weight: 600;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #ffffff;
+}
+
+figure > img {
+    border: 2px solid white;
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px white;
+}
+
+figcaption {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 5px;
+    padding: 5px;
+}
+
+p {
+    font-size: 1.3em;
+    color:darkturquoise;
+}
+
+a {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #00bfff;
+}
+
+label {
+    font-size: 1.3em;
+    margin: 15px 0 5px 0;
+    color: #f5f5f5;
+}
+
+input[type="text"] {
+    width: 700px;
+    font-size: 1.3em;
+    padding: 10px;
+    margin: 10px 0;
+    color: #f5f5f5;
+    background-color: #333333;
+    border-radius: 5px;
+    border: 1px solid #555555;
+}
+
+input[type="text"]::placeholder {
+    color: #888888;
+}
+
+input[type="submit"] {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 3px;
+    padding: 3px;
+}
+
+.button {
+    font-size: 1.3em;
+    font-weight: 600;
+    padding: 10px 20px;
+    background-color: #9e2a34;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: #b2323e;
+    transform: translateY(-2px);
+}
+
+#corner_image {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+#corner_image:hover {
+    transform: rotate(180deg) scale(1.1);
+}
+
+#result {
+    margin-top: 20px;
+    color: #e74c3c;
+    font-size: 1.1em;
+}
+
+.confession-container {
+    background-color: #333333;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.confession-container-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.confession-h1 {
+    color: #ffffff;
+    font-size: 1.8em;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.created {
+    color: darkgrey;
+}
+
+.confession_a {
+    text-decoration: none;
+    color:thistle;
+}

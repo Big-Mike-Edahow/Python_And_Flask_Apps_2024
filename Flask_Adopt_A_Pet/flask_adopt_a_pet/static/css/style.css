@@ -1,0 +1,173 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    color: black;
+    background-color:rgb(205, 231, 205);
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    background-color: #F7F9FA;
+    border-bottom: 2px solid black;
+}
+
+nav > h1 {
+    font-size: 42px;
+    font-weight: bold;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    padding-left: 50px;
+    color: black;
+}
+
+nav>a {
+    font-size: 1.6em;
+    font-weight: 600;
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+main {
+    margin: 20px;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headline-h1 {
+    font-size: 3em;
+    font-weight: 600;
+}
+
+hr {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    height: 6px;
+    color: black;
+    background-color: black;
+}
+
+a {
+    color: black;
+}
+
+.view-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: start;
+    gap: 20px;
+}
+
+.about-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+table {
+    width: auto;
+    margin: 10px;
+    padding: 10px;
+    background-color: ghostwhite;
+    border: 5px solid #cad3e5;
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px #789ce4;
+}
+
+th,
+td {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 5px 10px 5px 10px;
+    padding: 5px 10px 5px 10px;
+    color: black;
+    border: 2px solid #cad3e5;
+}
+
+th {
+    color: green;
+}
+
+td > a {
+    color: purple;
+    text-decoration: none;
+}
+
+#description {
+    color: rgb(19, 66, 66);
+}
+
+img {
+    border: 2px solid black;
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px black;
+}
+
+figcaption {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 3px;
+    padding: 3px;
+}
+
+.button {
+    font-size: 1.3em;
+    font-weight: 600;
+    padding: 2px 5px;
+    color: black;
+    background-color: rgb(187, 209, 230);
+    border: 2px solid darkslategray;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    background-color: #F7F9FA;
+    border-top: 2px solid black;
+}
+
+footer>p {
+    font-size: 1.5em;
+    font-weight: 600;
+    font-style: italic;
+    color: black;
+}
+
+footer > p > a {
+    text-decoration: none;
+}

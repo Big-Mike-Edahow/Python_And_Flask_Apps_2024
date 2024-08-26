@@ -1,0 +1,39 @@
+<!-- create.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Create</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <h1>Welcome to the Confession Wall!</h1>
+        <a href="/about">About</a>
+    </nav>
+    <div class="container">
+        <h1>Confess a new confession!</h1>
+        <h2>Here you can Confess a new confession anonymously!</h2>
+        <br>
+    </div>
+    <div class="container">
+        <form action="/create" method="POST">
+            <label for="title">Title: </label><br>
+            <input type="text" name="title" placeholder="Enter Title of the confession" required>
+            <br>
+            <label for="confession">Confession: </label><br>
+            <input type="text" name="confession" placeholder="Write your confession" required>
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>
+

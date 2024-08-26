@@ -1,0 +1,58 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+{% if info %}
+
+<h2 class="info center">{{ info }}</h2>
+
+{% endif %}
+
+{% if username %}
+
+<section class="grid-container">
+    <div>
+        <h1 class="center">TriPlanned</h1>
+        <h2>Where you and your friends share travel plans.</h2>
+        <figure>
+            <img src="../static/images/Paradise.png" alt="Paradise" width="400px" height="200px">
+        </figure>
+        <span>
+            <a href="/profile?username={{ username }}">Go to your profile</a>
+            <a href="/logout">Logout</a>
+        </span>
+    </div>
+    <div>
+        <h1 class="center">Travelers on Triplanned are going to:</h1>
+        <ul>
+            {% for post in posts %}
+            <li>&#128205;{{ post[2] }}, {{ post[3]}}</li>
+            <li>{{ post[4] }}</li>
+            <li>Created: <i>{{ post[5] }}</i></li>
+            <br>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+{% else %}
+
+<section class="center">
+    <h1 class="headline-h1">Account Login</h1>
+    <form action="/" method="post">
+        <input type="text" name="username" required>
+        </br></br>
+        <input type="password" name="password" required>
+        </br></br>
+        <input class="form-button" type="submit" value="Login">
+    </form>
+    </br></br>
+    <a class="button" href="/register">Register here</a>
+</section>
+
+{% endif %}
+
+{% endblock %}

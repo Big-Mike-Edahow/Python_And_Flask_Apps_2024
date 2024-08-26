@@ -1,0 +1,52 @@
+<!-- register.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Register</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home 🔢</a>
+        <h1>Flask Base64! 🧮</h1>
+        <a href="/about">About 🛈</a>
+    </nav>
+    <main>
+        {% if info %}
+
+        <section class="center">
+            <h1 class="info">{{ info }}</h1>
+        </section>
+
+        {% endif %}
+        <section class="center">
+            <h1 class="headline-h1">Account Registration</h1>
+            <br>
+            <form action="/register" method="post" autocomplete="off">
+                <label for="username">Username: </label>
+                <input type="text" name="username" required>
+                </br><br>
+                <label for="password">Password: </label>
+                <input type="password" name="password" required>
+                </br><br><br>
+                <input class="button" type="submit" value="Register">
+            </form>
+            <br><br>
+            <h2>Already have account?</h2>
+            <br>
+            <a class="button" href="/login">Login</a>
+        </section>
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 🐍</a></p>
+    </footer>
+</body>
+
+</html>
+

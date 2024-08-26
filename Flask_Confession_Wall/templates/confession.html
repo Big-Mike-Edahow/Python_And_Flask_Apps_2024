@@ -1,0 +1,42 @@
+<!-- confession.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Confession</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <h1>Welcome to the Confession Wall!</h1>
+        <a href="/about">About</a>
+    </nav>
+    <main>
+        <section class="center">
+            <h1 class="headline-h1">Confession...</h1>
+            <br><br>
+        </section>
+        <div class="confession_container">
+            <h1 class="confession_h1">{{ confession[1] }}</h1>
+            <br>
+            <p>{{ confession[2] }}</p>
+            <br>
+            <p class="created">Created: <i>{{ confession[3] }}</i></p>
+        </div>
+        <br>
+        <div class="confession_container confession_container_hover">
+            <br>
+            <a class="button" href="/delete?id={{ confession[0] }}" class="confession_a">Delete</a>
+            <a href="/delete?id={{ confession[0] }}"><img src="../static/images/trash_can.png" id="corner_image"
+                    alt="Delete"></a>
+        </div>
+    </main>
+</body>
+
+</html>

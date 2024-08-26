@@ -1,0 +1,44 @@
+<!-- profile.html -->
+
+{% extends "base.html" %}
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+
+<section class="grid-container">
+    <div>
+        <h1 class="headline-h1">Welcome back {{ username }}!</h1>
+        <h1>Plan a new dinner party:</h1>
+        <form action="/profile" method="post">
+            <input type="hidden" name="username" value="{{ username }}">
+            <label for="date">Date: </label>
+            <input type="date" name="date">
+            <br>
+            <label for="venue">Venue: </label>
+            <input type="text" name="venue">
+            <br>
+            <label for="main_dish">Main Dish: </label>
+            <input type="text" name="main_dish">
+            <br>
+            <label for="attendees">Attendees: </label>
+            <input type="number" name="attendees">
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div>
+        <h2>List of dinner parties you are currently planning:</h2>
+        <ul>
+            {% for party in parties %}
+            <li>Date: {{ party[2] }}</li>
+            <li>Venue: {{ party[3] }}</li>
+            <li>Main Dish: {{ party[4] }}</li>
+            <li>Attendees: {{ party[5] }}</li>
+            <li>Event Created: <i>{{ party[6] }}</i></li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+{% endblock %}
+

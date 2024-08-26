@@ -1,0 +1,45 @@
+<!-- view.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>View</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Adopt a Pet! 🐶</h1>
+        <a href="/">Home 🐾</a>
+        <a href="/about">About ❓</a>
+    </nav>
+    <main>
+        <section class="center">
+            <h1 class="headline-h1">{{ pet[2] }}</h1>
+            <br>
+            <hr><br>
+        </section>
+        <section class="view-grid-container">
+            <div>
+                <img src="{{ pet[5]}}" alt="Pet">
+            </div>
+            <div>
+                <h2>Breed and Type: {{ pet[1] }}</h2><br>
+                <h2>Age: {{ pet[3] }}</h2><br>
+                <h2>Description: <i><span id="description">{{ pet[4] }}</span></i></h2>
+                <br><br>
+                <a class="button" href="/">⬅️ Back</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 💪</a></p>
+    </footer>
+</body>
+
+</html>
+

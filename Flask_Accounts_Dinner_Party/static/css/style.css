@@ -1,0 +1,208 @@
+/* style.css */
+
+body {
+    background-color: rgb(235, 210, 235);
+    font-family: cursive;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    background-color: #c6ebd3;
+    border-bottom: 2px solid black;
+}
+
+nav>h1 {
+    font-size: 36px;
+    font-weight: bold;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    padding-left: 50px;
+    color: black;
+}
+
+nav>a {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+main {
+    position: relative;
+    top: 80px;
+    margin: 10px 10px 100px 10px;
+}
+
+h1 {
+    color: blue;
+}
+
+h2 {
+    color: purple;
+}
+
+ul {
+    font-size: 1.3em;
+    list-style-type: none;
+}
+
+.flash-msg {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: red;
+}
+
+figure>img {
+    border: 2px solid black;
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px black;
+}
+
+figcaption {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 3px;
+    padding: 3px;
+}
+
+span {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.2em;
+}
+
+form label {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: black;
+}
+
+form input {
+    width: auto;
+    font-size: 1.3em;
+    font-weight: 500;
+    margin: 2px 5px;
+    padding: 2px 5px;
+    color: black;
+    background: #FFFFFF;
+    border: 2px solid #0f54dd;
+    border-radius: 3px;
+}
+
+form textarea {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 2px 5px;
+    padding: 2px 5px;
+    color: black;
+    background: #FFFFFF;
+    border: 2px solid #0f54dd;
+    border-radius: 3px;
+}
+
+.form-button {
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 2px 5px;
+    color: black;
+    background-color: rgb(219, 231, 234);
+    border: 2px solid black;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.form-button:active {
+    border: 2px solid black;
+    box-shadow: inset 2px 2px 2px black;
+}
+
+.button {
+    width: auto;
+    font-size: 1.3em;
+    font-weight: 500;
+    padding: 3px 5px;
+    text-decoration: none;
+    color: rgb(71, 64, 64);
+    background-color: rgb(219, 231, 234);
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.button:active {
+    border: 2px solid black;
+    box-shadow: inset 2px 2px 2px black;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headline-h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+.about-h1 {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: flex-start;
+}
+
+.about-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    background-color: #c6ebd3;
+    border-top: 2px solid black;
+}
+
+footer>p {
+    font-size: 1.5em;
+    font-weight: 600;
+    font-style: italic;
+    color: black;
+}
+
+footer>p>a {
+    text-decoration: none;
+}

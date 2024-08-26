@@ -1,0 +1,66 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<section class="center flash-msg">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</section>
+
+{% if username %}
+
+<section class="grid-container">
+    <div>
+        <h1 class="headline-h1 center">Hi {{ username }}! 👋</h1>
+        <figure>
+            <img src="../static/images/Dinner_Party.jpg" alt="Dinner Party" width="400px" height="200px">
+        </figure>
+        <span>
+            <a href="/profile?username={{ username }}">Go to your profile</a>
+            <a href="/logout">Logout</a>
+        </span>
+    </div>
+    <div>
+        <h2 class="center">Dinner parties planned by our guests: 📋</h2>
+        <ul>
+            {% for party in parties %}
+            <li>Date: {{ party[2] }}</li>
+            <li>Venue: {{ party[3] }}</li>
+            <li>Main Dish: {{ party[4] }}</li>
+            <li>Attendees: {{ party[5] }}</li>
+            <li>Event Created: <i>{{ party[6] }}</i></li>
+            <br>
+            {% endfor %}
+        </ul>
+
+    </div>
+</section>
+
+{% else %}
+
+<section class="center">
+    <h1 class="headline-h1">Account Login</h1>
+    <form action="/" method="post">
+        <label for="username">Username: </label>
+        <input type="text" name="username" required>
+        </br>
+        <label for="password">Password: </label>
+        <input type="password" name="password" required>
+        </br></br>
+        <input class="form-button" type="submit" value="Login">
+    </form>
+    </br></br>
+    <a class="button" href="/register">Register here</a>
+</section>
+
+{% endif %}
+
+{% endblock %}
