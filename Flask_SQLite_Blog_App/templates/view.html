@@ -4,10 +4,11 @@
 <html lang="en">
 
 {% extends 'base.html' %}
+{% block title %} View {% endblock %}
 
 {% block content %}
 
-<h1>{% block title %} {{ post[1] }} {% endblock %}</h1>
+<h1>{{ post[1] }}</h1>
 <br>
 <p>{{ post[2] }}</p>
 <p class="created">Created: {{ post[3] }}</p>

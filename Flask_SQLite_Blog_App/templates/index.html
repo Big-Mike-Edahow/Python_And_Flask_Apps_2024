@@ -4,10 +4,11 @@
 <html lang="en">
 
 {% extends 'base.html' %}
+{% block title %} Home {% endblock %}
 
 {% block content %}
 
-<h1>{% block title %} Welcome to FlaskBlog {% endblock %}</h1>
+<h1>Welcome to FlaskBlog</h1>
 
 {% for post in posts %}
 <a href="{{ url_for('view', id=post[0]) }}"><h2>{{ post[1] }}</h2></a>
