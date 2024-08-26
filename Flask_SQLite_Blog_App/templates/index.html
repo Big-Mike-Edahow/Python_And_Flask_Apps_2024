@@ -1,0 +1,25 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{% block title %} Welcome to FlaskBlog {% endblock %}</h1>
+
+{% for post in posts %}
+<a href="{{ url_for('view', id=post[0]) }}"><h2>{{ post[1] }}</h2></a>
+<p class="created">Created: {{ post[3] }}</p>
+<span>
+<a class="btn btn-primary" href="{{ url_for('edit', id=post[0]) }}">Edit</a>
+<a class="btn btn-danger" href="{{ url_for('delete', id=post[0]) }}">Delete</a>
+</span>
+<hr>
+{% endfor %}
+
+{% endblock %}
+
+</html>
+

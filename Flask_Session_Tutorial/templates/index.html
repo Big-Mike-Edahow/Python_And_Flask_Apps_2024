@@ -1,0 +1,32 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+
+{% if info %}
+<section class="center">
+    <h1 class="info">{{ info }}</h1>
+    <br>
+</section>
+{% endif %}
+
+{% if username %}
+<section class="center">
+    <h1>Welcome {{ username }}!</h1>
+    <br>
+    <figure>
+        <img src="../static/image/profile_pic.jpg" alt="Profile pic" width="320px">
+    </figure>
+    </figure>
+</section>
+{% endif %}
+
+{% endblock %}
+
+</html>
+

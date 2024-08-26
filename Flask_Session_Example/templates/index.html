@@ -1,0 +1,51 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+{% block title %} Flask Session {% endblock %}
+
+{% block content %}
+
+{% if session['user'] %}
+<section class="center">
+    <p class="msg">{{ session['greet'] }}</p>
+    <br><br>
+</section>
+
+{% else %}
+
+{% if session['notify'] %}
+<section class="center">
+    <p class="msg">{{ session['notify'] }}</p>
+    <br><br>
+</section>
+{% endif %}
+
+{% endif %}
+
+<section class="center">
+    <div>
+        <h1 class="headline-h1">Welcome To GeekPython! 🐍</h1>
+        <br>
+    </div>
+    {% if session['user'] %}
+    <div>
+        <h2>Hi🖐, {{ session['user'] }}!</h2>
+        <br><br>
+        <a class="button" href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    {% else %}
+    <div>
+        <h3 class="msg">You Need to Register First!</h3>
+        <br><br>
+        <a class="button" href="{{ url_for('register') }}">Register</a>
+    </div>
+    {% endif %}
+</section>
+
+{% endblock %}
+
+</html>
+

@@ -1,0 +1,92 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: ghostwhite;
+}
+
+main {
+    margin: 30px;
+    padding: 20px;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headline-h1 {
+    font-size: 3em;
+    font-weight: 600;
+}
+
+.msg {
+    width: 50%;
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    color: black;
+    background-color: aqua;
+}
+
+.button {
+    font-size: 1.3em;
+    font-weight: 500em;
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    background-color: deepskyblue;
+    border: 2px solid black;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px black;
+    text-decoration: none;
+}
+
+.button:active {
+    box-shadow: inset 2px 2px 2px black;
+}
+
+form input[type=text] {
+    width: 300px;
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 2px 5px;
+    padding: 2px 5px;
+    color: black;
+    background: #FFFFFF;
+    border: 2px solid #E4E5E7;
+    border-radius: 3px;
+}
+
+form label {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: black;
+}
+
+.form-button {
+    font-size: 1.3em;
+    font-weight: 500em;
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    background-color: deepskyblue;
+    border: 2px solid black;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px black;
+    text-decoration: none;
+}
+
+.form-button:active {
+    box-shadow: inset 2px 2px 2px black;
+}

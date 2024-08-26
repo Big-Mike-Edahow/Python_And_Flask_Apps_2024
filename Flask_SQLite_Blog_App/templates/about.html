@@ -1,0 +1,26 @@
+<!-- about.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="center">{% block title %} About Big Mike! {% endblock %}</h1>
+<br>
+<section class="about-grid-container">
+    <figure>
+        <img src="../static/images/Big_Mike.jpg" alt="Big Mike" width="400px">
+        <figcaption>Big Mike!</figcaption>
+    </figure>
+    <figure>
+        <img src="../static/images/Newgate_Mall.jpg" alt="Newgate Mall" width="400px">
+        <figcaption>Newgate Mall</figcaption>
+    </figure>
+</section>
+
+{% endblock %}
+
+</html>
+

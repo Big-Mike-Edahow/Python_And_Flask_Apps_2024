@@ -1,0 +1,178 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #212529;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    background-color: dodgerblue;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+nav h1 {
+    font-size: 48px;
+    font-weight: bold;
+    background-image: url("/static/images/logo.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    padding-left: 50px;
+    color: white;
+}
+
+nav>a {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 5px;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    margin: 20px 10px 50px 10px;
+    padding-bottom: 100px;
+}
+
+.headline-h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+figure>img {
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px black;
+}
+
+figcaption {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 5px;
+    padding: 5px;
+}
+
+.button {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 2px 5px;
+    color: black;
+    background-color: rgb(219, 231, 234);
+    border: 2px solid black;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+label {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+input {
+    width: 200px;
+    font-size: 1.3em;
+    font-weight: 500;
+    margin: 3px;
+    padding: 3px;
+    background-color: azure;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    width: auto;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 2px 5px;
+    color: black;
+    background-color: rgb(219, 231, 234);
+    border: 2px solid black;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+table {
+    background-color: transparent;
+    margin-bottom: 1rem;
+    width: 50%;
+}
+
+table th,
+table td {
+    font-size: 1.3em;
+    color: black;
+    padding: 0.5rem;
+    vertical-align: middle;
+}
+
+tbody tr:nth-of-type(odd) {
+    background-color: rgb(179, 208, 255, 0.3)
+}
+
+.table-button {
+    font-size: 1em;
+    font-weight: 500;
+    padding: 2px 5px;
+    color: black;
+    background-color: rgb(219, 231, 234);
+    border: 2px solid black;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    background-color: dodgerblue;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+footer>p {
+    font-size: 1.5em;
+    font-weight: 600;
+    font-style: italic;
+    color: white;
+}
+
+footer p >a{
+    color: green;
+    font-weight: 600;
+    text-decoration: none;
+}
