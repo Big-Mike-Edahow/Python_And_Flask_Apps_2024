@@ -1,0 +1,59 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Flask Notes! ✏️</h1>
+        <a href="{{ url_for('index') }}">Home 🏠</a>
+        <a href="{{ url_for('create') }}">Create 🆕</a>
+        <a href="{{ url_for('about') }}">About 🛈</a>
+    </nav>
+    <main>
+        <section class="center">
+            <h1 class="headline-h1">Welcome to Flask Notes! 📝</h1>
+            <br><br>
+            {% for message in get_flashed_messages() %}
+            <div class="alert alert-danger">{{ message }}</div>
+            {% endfor %}
+            <table class="center">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Created</th>
+                        <th>Note</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for note in notes %}
+                    <tr>
+                        <td id="id">#{{ note[0] }}</td>
+                        <td id="created"><i>{{ note[2] }}</i></td>
+                        <td id="content">{{ note[1] }}</td>
+                        <td>
+                            <a class="button" href="/edit?id={{ note[0] }}">Edit</a>
+                            <a class="button-danger" href="/delete?id={{ note[0] }}">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 🐍</a></p>
+    </footer>
+</body>
+
+</html>
+

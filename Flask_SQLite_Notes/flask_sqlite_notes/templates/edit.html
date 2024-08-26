@@ -1,0 +1,43 @@
+<!-- edit.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Edit</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Flask Notes! ✏️</h1>
+        <a href="{{ url_for('index') }}">Home 🏠</a>
+        <a href="{{ url_for('create') }}">Create 🆕</a>
+        <a href="{{ url_for('about') }}">About 🛈</a>
+    </nav>
+    <main>
+        <section class="center">
+            <h1 class="headline-h1">Edit Note! ✏️</h1>
+            <br><Br>
+            {% for message in get_flashed_messages() %}
+            <div class="alert-danger">{{ message }}</div>
+            {% endfor %}
+            <br>
+            <form method="post">
+                <label for="content">Note Content: </label><br><br>
+                <textarea type="text" name="content" placeholder="Note content..." value="{{ request.form['content'] }}"
+                    autofocus>{{ note[1] }}</textarea>
+                <br><br>
+                <button class="form-button" type="submit">Update Note</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 🐍</a></p>
+    </footer>
+</body>
+
+</html>

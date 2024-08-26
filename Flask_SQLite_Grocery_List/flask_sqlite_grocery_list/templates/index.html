@@ -1,0 +1,47 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav>
+        <img src="../static/images/logo_black.png" alt="grocery app logo" width="350px">
+        <a href="{{ url_for('index') }}">Home 🍞🍅🫑</a>
+        <a href="{{ url_for('about') }}">About ❓</a>
+    </nav>
+    <main>
+        <section class="center" id="remove_items">
+            <form action="/remove_items" method="POST">
+                {% for item in shopping_items%}
+                <input type="checkbox" name="check" id="{{item}}" value="{{item}}" onchange="check_me('{{ item }}')">
+                <label for="{{items}}" name="{{item}}">{{ item }}</label><br>
+                {% endfor %}
+                <input type="submit" value="CHECK ITEMS" id="remove_btn">
+            </form>
+        </section>
+        <section class="center" id="add_item">
+            <form action="/add_items" method="POST">
+                <select name="select_items">
+                    {% for item in all_items %}
+                    <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+                    <input type="submit" value="ADD ITEM" id="add_btn">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 🐍</a></p>
+    </footer>
+    <script src="../static/js/script.js" type="text/javascript"></script>
+</body>
+
+</html>
+

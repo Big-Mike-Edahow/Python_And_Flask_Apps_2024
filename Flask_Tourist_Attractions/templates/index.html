@@ -1,0 +1,60 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Tourist Attractions! 🗺️</h1>
+        <a href="/">Home 🏛️</a>
+        <a href="/create">Create 🖊️</a>
+        <a href="/about">About ℹ️</a>
+    </nav>
+    <main>
+        <section class='center'>
+            <h1 class="headline-h1">Tourist Attractions! 🔍</h1>
+            <br>
+            <hr><br><br>
+            <table class="center">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Attraction</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Created</th>
+                        <th class="emptycell"></th>
+                        <th class="emptycell"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for attraction in attractions %}
+                    <tr>
+                        <td>{{ attraction[0] }}</td>
+                        <td><a href='/view?id={{ attraction[0] }}'>{{ attraction[1] }}</a></td>
+                        <td>{{ attraction[2] | truncate(30, True) }}</td>
+                        <td>{{ attraction[3] }}</td>
+                        <td><time>{{ attraction[5] }}</time></td>
+                        <td><a class="button" href="/edit?id={{ attraction[0] }}">Edit</a></td>
+                        <td><a class="button" href="/delete?id={{ attraction[0] }}">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 🐍</a></p>
+    </footer>
+</body>
+
+</html>
+

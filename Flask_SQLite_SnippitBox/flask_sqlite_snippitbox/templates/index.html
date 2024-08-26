@@ -1,0 +1,60 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/img/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <header>
+    </header>
+    <nav>
+        <h1>Snippetbox! ✂️</h1>
+        <a href="/">Home 🎲</a>
+        <a href="/create">Create 🖊️</a>
+        <a href="/about">About 🛈</a>
+    </nav>
+    <main>
+        <section class='center'>
+            <h1 class="headline-h1">Latest Snippets 📝</h1>
+            <br>
+            <hr><br><br>
+            <table class="center">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Created</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for snippet in snippets %}
+                <tr>
+                    <td>{{ snippet[0] }}</td>
+                    <td><a href='/view?id={{ snippet[0] }}'>{{ snippet[1] }}</a></td>
+                    <td>{{ snippet[5] }}</td>
+                    <td><time>{{ snippet[6] }}</time></td>
+                    <td><a class="button" href="/edit?id={{ snippet[0] }}">Edit</a></td>
+                    <td><a class="button" href="/delete?id={{ snippet[0] }}">Delete</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 🐍</a></p>
+    </footer>
+</body>
+
+</html>
+

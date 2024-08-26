@@ -1,0 +1,46 @@
+<!-- view.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>View</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Tourist Attractions! 🗺️</h1>
+        <a href="/">Home 🏛️</a>
+        <a href="/create">Create 🖊️</a>
+        <a href="/about">About ℹ️</a>
+    </nav>
+    <main>
+        <section class="center">
+            <h1 class="headline-h1">{{ attraction[1] }}</h1>
+            <br>
+            <hr><br>
+        </section>
+        <section class="view-grid-container">
+            <div>
+                <img src="{{ attraction[4] }}" alt="Image" height="290px">
+            </div>
+            <div>
+                <h2>{{ attraction[1] }}</h2><br>
+                <h2>Status: <i>{{ attraction[3] }}</i></h2><br>
+                <p><b>Description:</b> {{ attraction[2] }}</p><br>
+                <br>
+                <a class="back-button" href="/">⬅️ Back</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 🐍</a></p>
+    </footer>
+</body>
+
+</html>
+

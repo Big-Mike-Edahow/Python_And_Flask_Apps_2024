@@ -1,0 +1,60 @@
+<!-- create.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Create</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Tourist Attractions! 🗺️</h1>
+        <a href="/">Home 🏛️</a>
+        <a href="/create">Create 🖊️</a>
+        <a href="/about">About ℹ️</a>
+    </nav>
+    <main>
+        <section class="center">
+            <h1 class="headline-h1">Add Attraction! 🖊️</h1>
+            <br><br>
+        </section>
+        <section>
+            <form class="create-edit-container" action='/create' method='POST'>
+                <div>
+                    <label for="attraction">Attraction: </label>
+                    <input type="text" name="attraction">
+                    <br>
+                    <label for="description">Description: </label>
+                    <textarea name="description" rows="4" cols="40"></textarea>
+                </div>
+                <div>
+                    <label for="image_url">Image URL: </label>
+                    <input type="text" name="image_url">
+                    <br><br>
+                    <label for="fieldset">Status:</label>
+                    <fieldset class="status-container">
+                            <input type="radio" class="radio" name="status" id="recommended" value="Recommended"
+                                checked="checked">
+                            <label for="recommended">Recommended</label>
+                            <input type="radio" class="radio" name="status" id="visit" value="Visit">
+                            <label for="visit">Visit</label>
+                            <input type="radio" class="radio" name="status" id="visited" value="Visited">
+                            <label for="visited">Visited</label>
+                    </fieldset>
+                    <br><br>
+                    <input class="form-button" type="submit" value="Submit">
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 🐍</a></p>
+    </footer>
+</body>
+
+</html>

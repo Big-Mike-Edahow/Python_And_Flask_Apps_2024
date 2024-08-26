@@ -1,0 +1,158 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway";
+}
+
+body {
+    background-color: white;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    background-color: #F7F9FA;
+    border-bottom: 2px solid black;
+}
+
+nav a {
+    color:tomato;
+    font-size: 2em;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+main {
+    position: relative;
+    top: 100px;
+}
+
+.headline-h1 {
+    font-size: 3em;
+    font-weight: 600;
+    color: black;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+label {
+    margin: 25px 5px;
+}
+
+#remove_items {
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 30px;
+    color: #302B29;
+    background-color: #E5E5E5;
+}
+
+#add_items {
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 30px;
+    color: #302B29;
+    background-color: #E5E5E5;
+}
+
+#add_btn {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 10px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #01A88A;
+    border-radius: 20px;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+#remove_btn {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px 15px;
+    color: black;
+    background-color: lightgray;
+    border-radius: 20px;
+    border: 2px solid white;
+    
+}
+
+select {
+    width: 200px;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding: 10px;
+    border: 2px solid darkgrey;
+}
+
+#add_btn:hover {
+    background-color: darkslategrey;
+}
+
+figure > img {
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px black;
+}
+
+figcaption {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    background-color:  #F7F9FA;
+    border-top: 2px solid black;
+}
+
+footer>p {
+    font-size: 1.5em;
+    font-weight: 600;
+    font-style: italic;
+    color: black;
+}
+
+footer>p>a {
+    color: tomato;
+    text-decoration: none;
+}

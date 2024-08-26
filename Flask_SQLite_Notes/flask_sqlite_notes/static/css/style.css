@@ -1,0 +1,233 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: ghostwhite;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    background-color: #c0e4c7;
+    border-bottom: 2px solid black;
+}
+
+nav h1 {
+    font-size: 3em;
+    font-weight: 600;
+    padding-left: 50px;
+    color: black;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+}
+
+nav>a {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 5px;
+    padding: 5px;
+    color: #34495E;
+    text-decoration: none;
+}
+
+main {
+    margin: 30px 10px 50px 10px;
+    padding-bottom: 100px;
+}
+
+.headline-h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+table {
+    margin: 5px;
+    padding: 5px;
+    background-color: floralwhite;
+}
+
+th {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 5px 3px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+td {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 5px 3px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#id {
+    background-color: #FFB6C1;
+}
+
+#created {
+    background-color: rgb(213, 229, 213);
+}
+
+#content {
+    background-color: rgb(217, 217, 233);
+}
+
+.alert-danger {
+    width: 500px;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    color: black;
+    background-color: rgb(226, 180, 203);
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+form input {
+    width: 450px;
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 2px 5px;
+    padding: 2px 5px;
+    color: black;
+    background: #FFFFFF;
+    border: 2px solid blue;
+    border-radius: 3px;
+}
+
+form textarea {
+    width: 450px;
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 2px 5px;
+    padding: 2px 5px;
+    color: black;
+    background: #FFFFFF;
+    border: 2px solid blue;
+    border-radius: 3px;
+}
+
+form label {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: black;
+}
+
+.form-button {
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 2px 5px;
+    color: black;
+    background-color: rgb(219, 231, 234);
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.form-button:active {
+    box-shadow: inset 2px 2px 2px black;
+}
+
+.button {
+    font-size: 1em;
+    font-weight: 600;
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid black;
+    color: black;
+    background-color: rgb(194, 213, 231);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.button:active {
+    box-shadow: inset 2px 2px 2px black;
+}
+
+.button-danger {
+    font-size: 1em;
+    font-weight: 600;
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid black;
+    color: black;
+    background-color: rgb(226, 180, 203);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.button-danger:active {
+    box-shadow: inset 2px 2px 2px black;
+}
+
+figure>img {
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px black;
+}
+
+figcaption {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 5px;
+    padding: 5px;
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    background-color: #c0e4c7;
+    border-top: 2px solid black;
+}
+
+footer>p {
+    font-size: 1.5em;
+    font-weight: 600;
+    font-style: italic;
+    color: black;
+    text-decoration: none;
+}
+
+footer>p>a {
+    color: black;
+    text-decoration: none;
+}
