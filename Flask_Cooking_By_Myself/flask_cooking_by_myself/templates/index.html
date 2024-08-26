@@ -1,0 +1,64 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<section class="center">
+  <h1 class="headline-h1">My Favorite Recipes! 🗒️</h1>
+  <br>
+</section>
+<section class="index-grid-container">
+  <div>
+    <div class="center">
+      <h1>Welcome to my cookbook!</h1>
+      <br>
+      <h2>These are recipes I like.</h2>
+      <br>
+      <hr><br>
+    </div>
+    <div>
+      {% for recipe in recipes %}
+      <div class="recipes">
+        <p><a href="/recipe?id={{ recipe[0] }}">{{ recipe[5] }}</a></p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div>
+    <section class="center">
+      <form action="/" method="POST">
+        <span id="recipe_name">
+        <label for="recipe">Recipe: </label>
+        <input id = "recipe_name" type="text" name="recipe">
+        </span>
+        <span>
+        <input type="radio" name="meal" id="breakfast" value="breakfast" checked="checked">
+        <label for="breakfast">Breakfast</label>
+        <input type="radio" name="meal" id="lunch" value="lunch">
+        <label for="lunch">Lunch</label>
+        <input type="radio" name="meal" id="dinner" value="dinner">
+        <label for="dinner">Dinner</label>
+        </span>
+        <br>
+        <label for="description">Description: </label>
+        <input type="text" name="description">
+        <br>
+        <label for="ingredients">Ingredients: </label>
+        <input type="text" name="ingredients">
+        <br>
+        <label for="instructions">Instructions: </label><br>
+        <textarea name="instructions" rows="3" cols="40"></textarea>
+        <br><br>
+        <input class="form-button" type="submit" value="Submit">
+      </form>
+    </section>
+  </div>
+</section>
+
+{% endblock %}
+
+</html>

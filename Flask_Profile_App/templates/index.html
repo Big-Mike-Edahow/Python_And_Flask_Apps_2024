@@ -1,0 +1,55 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<div class="one">
+    <div class="two">
+        <h1>Side Bar</h1>
+        <ul>
+            <li class="active"><a href="{{url_for('index')}}">Home</a></li>
+            <li><a href="{{url_for('register')}}">Register</a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <li><a href="{{url_for('update')}}">Update</a></li>
+            <li><a href="{{url_for('logout')}}">Log out</a></li>
+            <li><a href="{{url_for('about')}}">About</a></li>
+        </ul>
+    </div>
+    <div class="content" align="center">
+        <div class="topbar">
+            <h1>Enter your credentials to login</h1>
+        </div>
+        <br><br>
+        <div>
+            <div>
+                {% if msg %}
+                <h2 class="msg">{{ msg }}</h2>
+                <br>
+                {% if active %}
+                <h3><a href="{{url_for('profile')}}">Click here for your profile page.</a></h3>
+                <br>
+                {% endif %}
+                {% endif %}
+            </div>
+            <form action="{{ url_for('index')}}" method="post" autocomplete="off">
+                <input type="text" name="username" placeholder="Enter Your Username" class="textbox" id="username"
+                    required></br></br>
+                <input type="password" name="password" placeholder="Enter Your Password" class="textbox" id="password"
+                    required></br></br></br>
+                <input type="submit" class="btn" value="Login">
+            </form></br></br>
+            <p class="worddark">New to this page? <a href="{{ url_for('register') }}">Register here</a>
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+</html>

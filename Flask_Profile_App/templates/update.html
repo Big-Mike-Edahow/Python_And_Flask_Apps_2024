@@ -1,0 +1,57 @@
+<!-- update.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+{% block title %} Update {% endblock %}
+
+{% block content %}
+
+<div class="one">
+    <div class="two">
+        <h1>Side Bar</h1>
+        <ul>
+            <li><a href="{{url_for('index')}}">Home</a></li>
+            <li><a href="{{url_for('register')}}">Register</a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <li class="active"><a href="{{url_for('update')}}">Update</a></li>
+            <li><a href="{{url_for('logout')}}">Log out</a></li>
+            <li><a href="{{url_for('about')}}">About</a></li>
+        </ul>
+    </div>
+    <div class="content" align="center">
+        <div class="topbar">
+            <h1>Fill Your Details to Update</h1>
+        </div>
+        <br>
+        <div>
+            {% if msg %}
+            <p class="msg">{{ msg }}</p>
+            <br>
+            {% endif %}
+        </div>
+        <div class="contentbar">
+            <form action="{{ url_for('update') }}" method="post" autocomplete="off">
+                <input type="text" name="username" placeholder="Username" class="textbox" id="username"
+                    required></br></br>
+                <input type="password" name="password" placeholder="Password" class="textbox" id="password"
+                    required></br></br>
+                <input type="email" name="email" placeholder="Email" class="textbox" id="email"
+                    required></br></br>
+                <input type="text" name="city" placeholder="City" class="textbox" id="city"
+                    required></br></br>
+                <input type="text" name="state" placeholder="State" class="textbox" id="state"
+                    required>
+                </br></br>
+                <input type="submit" class="btn" value="Update">
+            </form>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+</html>
+

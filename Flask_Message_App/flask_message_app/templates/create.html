@@ -1,0 +1,28 @@
+<!-- create.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends 'base.html' %}
+
+{% block title %}Create{% endblock %}
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Add a new message! ✏️</h1>
+    <br>
+<form method="post">
+    <label for="title">Title:</label><br>
+    <input type="text" name="title" placeholder="Message title" value="{{ request.form['title'] }}"></input>
+    <br><br>
+    <label for="content">Message Content:</label><br>
+    <textarea name="content" placeholder="Message content" rows="3" cols="40">{{ request.form['content'] }}</textarea>
+    <br><br>
+    <button class="form-button" type="submit">Submit</button>
+</form>
+</section>
+
+{% endblock %}
+
+</html>
+

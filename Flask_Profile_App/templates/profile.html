@@ -1,0 +1,71 @@
+<!-- profile.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+
+<div class="one">
+    <div class="two">
+        <h1>Side Bar</h1>
+        <ul>
+            <li><a href="{{url_for('index')}}">Home</a></li>
+            <li><a href="{{url_for('register')}}">Register</a></li>
+            <li class="active"><a href="{{url_for('profile')}}">Profile</a></li>
+            <li><a href="{{url_for('update')}}">Update</a></li>
+            <li><a href="{{url_for('logout')}}">Log out</a></li>
+            <li><a href="{{url_for('about')}}">About</a></li>
+        </ul>
+    </div>
+    <div class="content" align="center">
+        <div class="topbar">
+            <h1>Your Profile Informtion</h1>
+        </div>
+        <br>
+        <div>
+            {% if msg %}
+            <p class="msg">{{ msg }}</p>
+            {% endif %}
+            <br>
+        </div>
+        <div class="contentbar">
+            <div class="border">
+                <figure>
+                    <img src="../static/images/Profile_Pic.jpg" alt="Profile pic" width="200px">
+                </figure>
+                <table class="worddark"></br>
+                    <tbody>
+                        <tr>
+                            <td>Username:</td>
+                            <td>{{ user[1] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Password:</td>
+                            <td>{{ user[2] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td>{{ user[3] }}</td>
+                        </tr>
+                        <tr>
+                            <td>City:</td>
+                            <td>{{ user[4] }}</td>
+                        </tr>
+                        <tr>
+                            <td>State:</td>
+                            <td>{{ user[5] }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+</html>
+

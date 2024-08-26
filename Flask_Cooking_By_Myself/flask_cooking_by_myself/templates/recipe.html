@@ -1,0 +1,65 @@
+<!-- recipe.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+{% block title %} Recipe {% endblock %}
+
+{% block content %}
+<section class="view-grid-container">
+  <div>
+    <div class="center">
+      <h1>Recipe: {{ recipe[5] }}</h1>
+      <br>
+    </div>
+    <h2 class="center">Ingredients:</h2>
+    <p id="ingredients">{{ recipe[3] }}</p>
+    <br>
+    <table>
+      <thead>
+        <th>Instructions</th>
+      </thead>
+      <tbody>
+        {% for instruction in instructions %}
+        <tr>
+          <td>{{ instruction }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <a class="form-button" href="/">⬅️ Back</a>
+    <a class="button" href="/delete_recipe?id={{ recipe[0] }}">Delete</a>
+  </div>
+  <div>
+    <h1>Comments:</h1>
+    <br>
+    <div class="comments">
+      {% for comment in comments %}
+      <p><b>Author: </b>{{ comment[2] }}</p>
+      <p><b>Content: </b>{{ comment[3] }}</p>
+      <p><b>Created: </b><span id=created>{{ comment[4] }}</span></p>
+      <br>
+      <a class="comment-delete-button" href="/delete_comment?id={{ comment[0] }}">Delete</a>
+      {% endfor %}
+    </div>
+    <br>
+    <div>
+      <form action="/recipe" method="POST">
+        <input type="hidden" name="recipe_id" value="{{ recipe[0] }}">
+        <label for="author">Author: </label>
+        <input type="text" name="author">
+        <br>
+        <label for="comment">Content: </label>
+        <input type="text" name="content" required>
+        <br>
+        <input class="form-button" type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+</html>

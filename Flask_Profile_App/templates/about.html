@@ -1,0 +1,42 @@
+<!-- about.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+{% block title %} About {% endblock %}
+
+{% block content %}
+
+<div class="one">
+    <div class="two">
+        <h1>Side Bar</h1>
+        <ul>
+            <li><a href="{{url_for('index')}}">Home</a></li>
+            <li><a href="{{url_for('register')}}">Register</a></li>
+            <li><a href="{{url_for('profile')}}">Profile</a></li>
+            <li><a href="{{url_for('update')}}">Update</a></li>
+            <li><a href="{{url_for('logout')}}">Log out</a></li>
+            <li class="active"><a href="{{url_for('about')}}">About</a></li>
+        </ul>
+    </div>
+    <div class="content" align="center">
+        <div class="topbar">
+            <h1>About Big Mike</h1>
+        </div>
+        <section class="grid-container">
+            <figure>
+                <img src="../static/images/Big_Mike.jpg" alt="Big Mike" width="400px">
+                <figcaption>Big Mike! 😎</figcaption>
+            </figure>
+            <figure>
+                <img src="../static/images/Locomotive.jpg" alt="Locomotive" width="400px">
+                <figcaption>Locomotive. 🚂</figcaption>
+            </figure>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+</html>
+
