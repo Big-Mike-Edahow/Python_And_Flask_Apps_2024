@@ -1,0 +1,9 @@
+/* schema.sql */
+
+DROP TABLE IF EXISTS todos;
+
+CREATE TABLE IF NOT EXISTS todos (
+    id INTEGER PRIMARY KEY,
+    todo TEXT NOT NULL,
+    created TEXT DEFAULT CURRENT_TIMESTAMP
+);

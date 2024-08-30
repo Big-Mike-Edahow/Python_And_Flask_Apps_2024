@@ -1,0 +1,22 @@
+<!-- edit.html -->
+
+{% extends "base.html" %}
+{% block title %} Edit {% endblock %}
+
+{% block content %}
+
+<section class="index-flex-container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-danger">{{ message }}</div>
+    {% endfor %}
+    <br>
+    <h1 class="headline-h1">Edit Todo's ✏️</h1>
+    <br>
+    <form method="post">
+        <label for="todo">Todo: </label>
+        <input type="text" name="todo" placeholder="Add a todo" value="{{ todo[1] }}">
+        <button type="submit">Update</button>
+    </form>
+</section>
+
+{% endblock %}

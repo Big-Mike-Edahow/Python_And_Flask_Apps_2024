@@ -1,0 +1,33 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<section class="index-flex-container">
+    <h1 class="headline-h1">ToDo List 📝</h1>
+    <br>
+    <form method="post" action="/add">
+        <label for="todo">Todo: </label>
+        <input type="text" name="todo" placeholder="Add a todo" required>
+        <button type="submit">Add</button>
+    </form>
+    <br>
+    <ul class="todos">
+        <br>
+        {% for todo in todos %}
+        <li>
+            <span>
+                {{ todo[1] }} <span class="created"><i>Created: {{ todo[2] }}</i></span>
+                <a class="button-edit" href="/edit/{{ todo[0] }}">Edit</a>
+                <a class="button-danger" href="/delete/{{ todo[0] }}">Delete</a>
+            </span>
+        </li>
+        <br>
+        {% endfor %}
+    </ul>
+</section>
+
+{% endblock %}
+
