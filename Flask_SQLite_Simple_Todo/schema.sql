@@ -1,0 +1,14 @@
+/* schema.sql */
+
+DROP TABLE IF EXISTS todos;
+
+CREATE TABLE IF NOT EXISTS todos(
+    id INTEGER PRIMARY KEY,
+    todo TEXT NOT NULL);
+
+DROP TABLE IF EXISTS completed;
+
+CREATE TABLE IF NOT EXISTS completed(
+    id INTEGER PRIMARY KEY,
+    todo TEXT NOT NULL,
+    todo_id INTEGER NOT NULL);

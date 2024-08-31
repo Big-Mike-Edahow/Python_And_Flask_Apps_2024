@@ -1,0 +1,74 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home 🏠</a>
+        <h1>Big Mike's Todos! 📋</h1>
+        <a href="/about">About 🛈</a>
+    </nav>
+    <main>
+        <section class="index-flex-container">
+            <section class="center">
+                <form action="/addTodo" method="GET">
+                    <label for="todo">Todo:</label>
+                    <input type="text" name="todo" placeholder="Please enter a todo." required>
+                    <button type="submit">Add Todo</button>
+                </form>
+                <br>
+                <h1 class="headline-h1">Todos 🗒️</h1>
+                <br>
+            </section>
+            <section class="center">
+                {% if todos | length < 1 %}
+                <h3>No todos to display.</h3>
+                {% else %}
+                    <table class="not-complete">
+                        <tbody>
+                            {% for todo in todos %}
+                            <tr>
+                                <td>{{ todo[1] }} [<a href="/completed/{{ todo[0] }}/{{ todo[1] }}">Completed</a> | <a
+                                        href="/deleteTodo/{{ todo[0] }}">Delete</a>] </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
+                <br>
+            </section>
+            <section class="center">
+                <h1 class="headline-h1">Completed Todos ✔️</h1>
+                <br>
+                {% if completed | length < 1 %} <h3>No todos completed</h3>
+                    {% else %}
+                    <table class="completed">
+                        <tbody>
+                            {% for todo in completed %}
+                            <tr>
+                                <td>
+                                    {{ todo[1] }} [<a href="/deleteCompleted/{{ todo[0] }}">Delete</a>]
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endif %}
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 🐍</a></p>
+    </footer>
+</body>
+
+</html>
