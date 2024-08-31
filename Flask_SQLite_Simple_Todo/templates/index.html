@@ -19,6 +19,7 @@
     </nav>
     <main>
         <section class="index-flex-container">
+
             <section class="center">
                 <form action="/addTodo" method="GET">
                     <label for="todo">Todo:</label>
@@ -30,22 +31,24 @@
                 <br>
             </section>
             <section class="center">
-                {% if todos | length < 1 %}
-                <h3>No todos to display.</h3>
-                {% else %}
+                {% if todos | length < 1 %} <h3>No todos to display.</h3>
+                    {% else %}
                     <table class="not-complete">
                         <tbody>
                             {% for todo in todos %}
                             <tr>
-                                <td>{{ todo[1] }} [<a href="/completed/{{ todo[0] }}/{{ todo[1] }}">Completed</a> | <a
-                                        href="/deleteTodo/{{ todo[0] }}">Delete</a>] </td>
+                                <td>{{ todo[1] }}
+                                    [<a href="/completed/{{ todo[0] }}/{{ todo[1] }}">Completed</a> |
+                                    <a href="/deleteTodo/{{ todo[0] }}">Delete</a>]
+                                </td>
                             </tr>
                             {% endfor %}
                         </tbody>
                     </table>
-                {% endif %}
-                <br>
+                    {% endif %}
+                    <br>
             </section>
+
             <section class="center">
                 <h1 class="headline-h1">Completed Todos ✔️</h1>
                 <br>
@@ -64,6 +67,7 @@
                     </table>
                     {% endif %}
             </section>
+
         </section>
     </main>
     <footer>
@@ -72,3 +76,4 @@
 </body>
 
 </html>
+
