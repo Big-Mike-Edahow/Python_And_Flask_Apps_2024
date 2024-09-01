@@ -20,7 +20,7 @@ def add():
     if len(task.strip()) > 0:
         conn = sqlite3.connect("./data/database.db")
         curs = conn.cursor()
-        curs.execute("INSERT INTO tasks(task) VALUES(?)",(task,))
+        curs.execute("INSERT INTO tasks(task) VALUES(?)", (task,))
         conn.commit()
         conn.close()
         return redirect(url_for('index'))
