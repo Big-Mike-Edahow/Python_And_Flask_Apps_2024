@@ -1,0 +1,135 @@
+/* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f5f5dc;
+}
+
+main {
+    padding: 20px;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.headline-h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+.box {
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto 20px auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.forms-container {
+    display: flex;
+    justify-content: space-between;
+    width: 56vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.completed {
+    background-color: #90ee90;
+}
+
+.not-completed {
+    background-color: #ffc0cb;
+}
+
+textarea {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    border: 2px solid violet;
+    border-radius: 12px;
+}
+
+form input[type=submit] {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin: 5px 0;
+    padding: 10px;
+    color: black;
+    background-color: #d8bfd8;
+    border: 2px solid violet;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px black;
+    cursor: pointer;
+}
+
+form input[type=submit]:active {
+    box-shadow: inset 2px 2px 2px black;
+}
+
+table {
+    width: 100%;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+th {
+    padding: 8px;
+    color: white;
+    background-color: #51355a;
+    border: 1px solid #ddd;
+}
+
+td {
+    text-align: center;
+    padding: 8px;
+    border: 2px solid #ddd;
+}
+
+.action-btn {
+    background-color: #51355a;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background-color: #6c4c7e;
+}
+
+.forms-container .box {
+    width: auto;
+}
+
+.input-flex-container {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+}

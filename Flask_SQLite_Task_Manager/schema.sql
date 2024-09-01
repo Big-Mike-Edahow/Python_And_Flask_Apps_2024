@@ -1,0 +1,7 @@
+/* schema.sql */
+
+CREATE TABLE IF NOT EXISTS tasks(
+    id INTEGER PRIMARY KEY,
+    task TEXT NOT NULL,
+    completed INTEGER DEFAULT 0,
+    created TEXT DEFAULT CURRENT_TIMESTAMP);
