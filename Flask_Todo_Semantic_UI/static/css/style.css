@@ -1,0 +1,82 @@
+/* style.css */
+
+
+
+main {
+    margin: 20px;
+    padding: 10px;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headline-h1 {
+    font-size: 3.5em;
+}
+
+label {
+    font-size: 1.6em !important;
+    font-weight: 500 !important;
+    color: black !important;
+}
+
+input {
+    font-size: 1.5em !important;
+}
+
+button {
+    font-size: 1.3em !important;
+}
+
+table {
+    width: auto;
+    font-size: 1.5em !important;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+}
+
+tbody {
+    position: relative;
+    top: 10px;
+}
+
+th {
+    padding: 5px;
+    border: 2px solid black;
+}
+
+tr {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+td {
+    padding: 5px;
+}
+
+.completed, .not-completed {
+    font-size: .8em !important;
+}
+
+.actions {
+    font-size: .8em !important;
+}
+
+.todo-flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+}
+
+.created {
+    font-size: .9em;
+    color: rgb(109, 104, 104);
+}
+

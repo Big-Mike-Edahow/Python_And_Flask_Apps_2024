@@ -1,0 +1,62 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <title>Todo App</title>
+</head>
+
+<body>
+    <main>
+        <section class="ui container">
+            <h1 class="center headline-h1">Todo App</h1>
+
+            <form class="ui form" action="/add" method="post">
+                <div class="field">
+                    <label for="todo">Todo Title: </label>
+                    <input type="text" name="todo" placeholder="Enter Todo..."><br>
+                </div>
+                <button class="ui blue button" type="submit">Add</button>
+            </form>
+            <hr>
+            <div class="ui segment">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="table-header">Todo</th>
+                            <th class="table-header">Status</th>
+                            <th class="table-header">Created</th>
+                            <th class="table-header">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for todo in todos %}
+                        <tr>
+                            <td>{{todo[0] }} | {{ todo[1] }}</td>
+                            {% if todo[2] %}
+                            <td class="completed ui green label">Completed</td>
+                            {% else %}
+                            <td class="not-completed ui gray label">Not Complete</td>
+                            {% endif %}
+                            <td class="created"><i>{{ todo[3] }}</i></td>
+                            <td><a class="actions ui blue button" href="/update/{{ todo[0] }}/{{ todo[2]}}">Update</a>
+                                <a class="actions ui red button" href="/delete/{{ todo[0] }}">Delete</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
+
