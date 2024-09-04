@@ -1,0 +1,21 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<section class="container">
+    <h1>User Tracker</h1>
+    <h3>Track user name & date on a database and retrieve them.</h3>
+    <p>Enter a user name:</p>
+    <form method="post" action=".">
+        <p><input name="user" placeholder="Bill Gates" /></p>
+        <p>Today's Date: {{ today }}</p>
+        <p><input type="submit" value="Insert" /></p>
+    </form>
+    <p>{{ errors }}</p>
+</section>
+
+{% endblock %}
+

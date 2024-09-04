@@ -1,0 +1,27 @@
+<!-- admin.html -->
+
+{% extends "base.html" %}
+{% block title %} Admin {% endblock %}
+
+{% block content %}
+	<section class="container">
+		<h3 id="top">Retrieve all users</h3>
+		<p>Enter admin password:</p>
+		<form action="/admin" method="post" autocomplete="off">
+			<p><input name="password" placeholder="*******" autocomplete="off"></p>
+			<p><input type="submit" value="Retrieve Data" /></p>
+		</form>
+
+		{% for user in user_list %}
+			<p>{{ user[0] }}  {{ user[1] }}  {{ user[2] }}<span><a href="/delete/{{ user[0] }}"> Delete</a></span></p>
+		{% endfor %}
+
+		<p>{{ invalid }}</p>
+		
+	</section>
+
+	<div class= "box">
+        <button class="btn btn-outline-primary"><a href="/">Back Home!</a></button>
+    </div>
+
+{% endblock %}

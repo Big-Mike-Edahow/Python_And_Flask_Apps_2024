@@ -1,0 +1,8 @@
+/* schema.sql */
+
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE IF NOT EXISTS users(
+    id INTEGER PRIMARY KEY,
+    user TEXT NOT NULL,
+    created TEXT DEFAULT CURRENT_TIMESTAMP);

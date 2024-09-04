@@ -1,0 +1,21 @@
+<!-- results.html -->
+
+{% extends "base.html" %}
+{% block title %} Results {% endblock %}
+
+{% block content %}
+<section class="container">
+    <h1 name="top"> User List</h1>
+    <form action="/" method="GET">
+        <input type="submit" value="Insert another one">
+    </form><br>
+
+    <p>{{ today }}: {{ user }}</p>
+    <br>
+    <div class="box">
+        <button class="btn btn-outline-primary"><a href="/">Back Home!</a></button>
+    </div>
+</section>
+
+{% endblock %}
+
