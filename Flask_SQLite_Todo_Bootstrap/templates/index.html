@@ -1,0 +1,36 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <a class="btn btn-success" href="/create">Add post</a>
+                    {% for post in posts %}
+                    <div class="card mt-3">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col"><strong>{{post[1]}}</strong></div>
+                                <div class="col text-right">
+                                    <a class="btn btn-primary" href="/edit/{{ post[0] }}">Edit</a>
+                                    <a class="btn btn-danger" href="/delete/{{ post[0] }}">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            {{post[2][0:125]}}
+                            <a href="/view/{{ post[0] }}">... show more</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,32 @@
+<!-- view.html -->
+
+{% extends "base.html" %}
+{% block title %} View {% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card mt-4">
+          <div class="card-body">
+            <div class="card mt-3">
+              <div class="card-header">
+                <div class="row">
+                  <div class="col"><strong><h4>{{post[1]}}</h4></strong></div>
+                  <div class="col text-right">
+                    <a class="btn btn-secondary" onclick="history.back()">Back</a>
+                    <a class="btn btn-primary" href="/edit/{{ post[0] }}">Edit</a>
+                    <a class="btn btn-danger" href="/delete/{{ post[0] }}">Delete</a>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                {{post[2]}} 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

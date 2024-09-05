@@ -1,0 +1,27 @@
+<!-- edit.html -->
+
+{% extends "base.html" %}
+{% block title %} Edit {% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card mt-4">
+          <div class="card-body">
+            <form method="POSt" id="post"  class="form-group">
+              <input class="form-control" type="text" name="title" placeholder="Enter post title..." value="{{ post[1] }}">
+              <textarea class="form-control noresize mt-2" name="content" placeholder="Leave your post here..." rows="12">{{ post[2] }}</textarea>
+              <div class="row">
+                <div class="col-md-2 ml-auto">
+                  <button class="btn btn-success col-md-12 mt-2" type="submit">Update</button>
+                </div>
+              </div>
+            </form>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
