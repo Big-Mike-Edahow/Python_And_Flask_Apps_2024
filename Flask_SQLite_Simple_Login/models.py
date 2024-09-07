@@ -3,7 +3,6 @@
 from flask import session, flash, redirect, url_for
 import sqlite3
 
-
 def insertUser(username, password):
     conn = sqlite3.connect("./data/database.db")
     curs = conn.cursor()
