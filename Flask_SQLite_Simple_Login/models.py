@@ -3,8 +3,11 @@
 from flask import session, flash, redirect, url_for
 import sqlite3
 
+def getDB():
+    conn = sqlite3.connect("./data/database.db"); return conn
+
 def insertUser(username, password):
-    conn = sqlite3.connect("./data/database.db")
+    conn = getDB()
     curs = conn.cursor()
     storedUsername = curs.execute("SELECT * FROM users WHERE username = ?", (username,)).fetchone()
     if storedUsername:
@@ -16,10 +19,11 @@ def insertUser(username, password):
         conn.commit()
         conn.close()
         return redirect(url_for("index"))
-
+    
 def selectUsers():
-    conn = sqlite3.connect("./data/database.db")
+    conn = getDB()
     curs = conn.cursor()
     users = curs.execute("SELECT * FROM users").fetchall()
     conn.close()
     return users
+
