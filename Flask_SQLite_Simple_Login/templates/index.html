@@ -1,0 +1,70 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <main>
+        <section class="center">
+            <h1 class="headline-h1">Simple Flask Login</h1>
+            <br>
+            {% if users %}
+            <section class="grid-container">
+            {% else %}
+            <section class="center">
+            {% endif %}
+                <section class="box">
+                    {% for message in get_flashed_messages() %}
+                    <p class="errorMsg">{{ message }}</p>
+                    <br>
+                    {% endfor %}
+                    <h1 class="box-h1">Log In</h1>
+                    <br><br>
+                    <form action="/" method="post">
+                        <input type="text" name="username" id="username" placeholder="Username" required />
+                        <br><br>
+                        <input type="password" name="password" id="password" placeholder="Password" required />
+                        <br><br>
+                        <input type="submit" class="button" value="Log In" />
+                    </form>
+                </section>
+                <section>
+                    {%if users%}
+                    <div class="users">
+                        <h2 class="center">Registered Users List</h2>
+                        <br>
+                        <table class="center">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Username</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {%for user in users%}
+                                <tr>
+                                    <td>{{ user[0] }}</td>
+                                    <td>{{ user[1] }}</td>
+                                </tr>
+                                {%endfor%}
+                            </tbody>
+                        </table>
+                    </div>
+                    {%endif%}
+                </section>
+    </main>
+    <footer>
+        <p>Copyright &copy; 2024 Mike Jackson &reg;</p>
+    </footer>
+</body>
+
+</html>
+
