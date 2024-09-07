@@ -1,0 +1,70 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="post">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="title" placeholder="Title" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="description" cols="100" placeholder="Add a Description"
+                                required></textarea>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary" type="submit">
+                            Add
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in entries %}
+                    <tr>
+                        <td>{{ entry[0] }}</td>
+                        <td><strong>{{ entry[1] }}</strong></td>
+                        <td>{{ entry[2] }}</td>
+                        <td>
+                            <a class="{{ 'btn btn-success' if entry[3] else 'btn btn-dark'}}"
+                                href="/turn/{{ entry[0] }}/{{ entry[3] }}">
+                                Turn Status
+                            </a>
+                            <a class="btn btn-danger" href="/delete/{{ entry[0] }}">
+                                Delete
+                            </a>
+                            <a class="btn btn-info" href="/edit/{{ entry[0] }}">
+                                Edit
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+

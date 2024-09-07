@@ -1,0 +1,35 @@
+<!-- edit.html -->
+
+{% extends "base.html" %}
+{% block title %} Update {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/edit/{{ entry[0] }}" method="post">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="title" placeholder="Title"
+                                value="{{ entry[1] }}" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="description" cols="100" placeholder="Add a Description"
+                                required> {{ entry[2] }} </textarea>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary" type="submit">
+                            Update
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
