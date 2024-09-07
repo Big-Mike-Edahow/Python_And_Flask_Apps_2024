@@ -1,5 +1,5 @@
 # app.py
-# Flask SQLite CRUD
+# Flask SQLite List
 
 from flask import Flask, flash, render_template, request, redirect, url_for, session
 import sqlite3
