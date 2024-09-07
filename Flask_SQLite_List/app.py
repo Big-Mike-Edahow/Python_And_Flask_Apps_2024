@@ -8,7 +8,6 @@ import os
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "Some things I do better than others."
 
-jedi = "of the jedi"
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 def getDB():
@@ -38,8 +37,7 @@ def add():
             conn.commit()
             conn.close()
         return redirect(url_for('index'))
-
-    return "of the jedi"
+    return render_template("index.html")
 
 @app.route('/edit/<int:id>', methods=['GET', 'POST'])
 def edit(id):
