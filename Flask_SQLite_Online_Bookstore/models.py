@@ -31,7 +31,7 @@ def update(name, author, count, id):
     return redirect(url_for('index'))
 
 def delete(id):
-    conn = sqlite3.connect('./data/database.db')
+    conn = getDB()
     curs = conn.cursor()
     curs.execute("DELETE FROM books WHERE id=?", (id,))
     conn.commit()
