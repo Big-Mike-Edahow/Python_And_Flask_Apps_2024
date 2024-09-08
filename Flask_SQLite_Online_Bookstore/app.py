@@ -31,7 +31,7 @@ def update(id):
         flash("Book Updated Successfully")
         return redirect(url_for("index"))
 
-@app.route("/delete/<id>/")
+@app.route("/delete/<int:id>")
 def delete(id):
     db.delete(id)
     session.pop('_flashes', None)
