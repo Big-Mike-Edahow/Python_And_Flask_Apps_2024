@@ -1,3 +1,6 @@
+# app.py
+# Python Flask SQLite Online Bookstore
+
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 import models as db
  
