@@ -1,0 +1,20 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+body {
+    background: #2980B9;
+    background: linear-gradient(to top, #FFFFFF, #6DD5FA, #2980B9);
+}
+
+nav > h1 {
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: 350px 0px;
+    padding-left: 50px;
+}
