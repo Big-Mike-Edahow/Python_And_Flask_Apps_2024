@@ -35,5 +35,6 @@ def delete(id):
     curs = conn.cursor()
     curs.execute("DELETE FROM books WHERE id=?", (id,))
     conn.commit()
+    conn.close()
     return redirect(url_for("index"))
 
