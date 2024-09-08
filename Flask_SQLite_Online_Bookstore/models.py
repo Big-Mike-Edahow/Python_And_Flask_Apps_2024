@@ -17,8 +17,7 @@ def getAllBooks():
 def insert(name, author, count):
     conn = getDB()
     curs = conn.cursor()
-    curs.execute(
-        "INSERT INTO books(name, author, count) VALUES(?, ?, ?)", (name, author, count))
+    curs.execute("INSERT INTO books(name, author, count) VALUES(?, ?, ?)", (name, author, count))
     conn.commit()
     conn.close()
     return redirect(url_for("index"))
