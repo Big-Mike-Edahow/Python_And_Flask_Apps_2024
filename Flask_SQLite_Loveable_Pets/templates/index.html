@@ -1,0 +1,36 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Lovable Pets! 🐶</h1>
+        <a href="/">Home 🐾</a>
+        <a href="/about">About ❓</a>
+    </nav>
+    <main>
+        <section class="grid-container">
+            {% for pet in pets %}
+            <figure>
+                <img src="{{ pet[5]  }}" alt="Pet" width="275px" height="400px">
+                <figcaption>{{ pet[2] }}</figcaption>
+            </figure>
+            {% endfor %}
+        </section>
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 💪</a></p>
+    </footer>
+</body>
+
+</html>
+
