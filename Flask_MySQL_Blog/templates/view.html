@@ -1,0 +1,37 @@
+<!-- view.html -->
+
+{% extends "base.html" %}
+{% block title %} View {% endblock %}
+
+{% block content %}
+
+<h1 class="headline-h1">{{ post[1] }} 📋</h1>
+<div class="content">
+    <div class="post">
+        <b>
+            <p class="title">{{ post[1] }}</p>
+        </b>
+        <div class="content">
+            <p>{{ post[2] }}</p>
+            <br>
+            <p class="created">Created: {{ post[3] }}</p>
+        </div>
+        <h3>Comments</h3>
+        <form method="post">
+            <textarea name="content" placeholder="Comment" cols="40" rows="2"></textarea>
+            <button class="form-button" type="submit">Add comment</button>
+        </form>
+        {% for comment in comments %}
+        <div>
+            <span class="comment">
+                <p>{{ comment[1] }}</p>
+                <p class="created">Created: {{ comment[2] }}</p>
+            </span>
+            <a class="button" href="{{ url_for('delete_comment', comment_id=comment[0]) }}">Delete</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+

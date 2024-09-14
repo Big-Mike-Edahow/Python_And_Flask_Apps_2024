@@ -1,0 +1,26 @@
+<!-- edit.html -->
+
+{% extends 'base.html' %}
+{% block title %} Edit {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Edit {{ post[1] }} ✏️</h1>
+    <br>
+    <form method="post">
+        <label for="title">Title</label>
+        <br>
+        <input type="text" name="title" placeholder="Post title" value="{{ request.form['title'] or post[1] }}" required></input>
+        <br>
+        <label for="content">Post Content</label>
+        <br>
+        <textarea name="content" placeholder="Post content" rows="10"
+            cols="50" required>{{ request.form['content'] or post[2] }}</textarea>
+        <br>
+        <button class="form-button" type="submit">Submit</button>
+    </form>
+</section>
+
+{% endblock %}
+
