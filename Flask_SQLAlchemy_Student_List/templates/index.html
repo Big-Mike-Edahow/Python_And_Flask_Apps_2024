@@ -1,0 +1,35 @@
+<!-- index.html -->
+
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<h1 class="title">Students</h1>
+<div class="content">
+    {% for student in students %}
+    <div class="student">
+        <p><b>#{{ student.id }}</b></p>
+        <b>
+            <p class="name">
+                <a href="{{ url_for('view', id=student.id)}}">
+                    {{ student.firstname }} {{ student.lastname }}
+                </a>
+            </p>
+        </b>
+        <p>{{ student.email }}</p>
+        <p>{{ student.age }} years old.</p>
+        <p>Joined: {{ student.created }}</p>
+        <div class="bio">
+            <h4>Bio</h4>
+            <p>{{ student.bio }}</p>
+        </div>
+        <br>
+        <a class="button" href="{{ url_for('edit', id=student.id) }}">Edit</a>
+        <a class="button" href="{{ url_for('delete', id=student.id) }}">Delete</a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
