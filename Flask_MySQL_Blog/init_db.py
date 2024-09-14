@@ -5,7 +5,7 @@ import pymysql
 conn = pymysql.connect(
     host="localhost",
     user="mike",
-    password="foobar"
+    password="5454160s"
 )
 
 curs = conn.cursor()
