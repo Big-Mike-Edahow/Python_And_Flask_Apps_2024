@@ -24,7 +24,8 @@ class Student(db.Model):
 
     def __repr__(self):
         return f'<Student {self.firstname}>'
-    
+
+
 # Creating Database with App Context
 def create_db():
     with app.app_context():
