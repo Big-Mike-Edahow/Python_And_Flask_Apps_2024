@@ -1,0 +1,48 @@
+<!-- index.html -->
+
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+{% if current_user.is_authenticated %}
+<div class="form-group">
+    <h1 class='headings'> Hi {{current_user.username}}! You are logged in.</h1>
+    <hr>
+    <h2 class='headings'><a href="{{ url_for('create') }}">Create new post</a></h2>
+    <hr>
+</div>
+
+{% for post in posts %}
+<div class="blogs">
+    <article class="index-article">
+        <div class="form-group">
+            <div>
+                <h2> {{ post.title }} </h2>
+            </div>
+            <div>
+                <h3> {{ post.content }} </h3>
+            </div>
+            <div>
+                <h3> By {{ post.author }} on {{ post.created }} </h3>
+            </div>
+        </div>
+        <div>
+            <a href="/view/{{ post.id }}" class="mybtn"> View</a>
+        </div>
+    </article>
+</div>
+{% endfor %}
+
+{% else %}
+
+<h1 class='headings'>Welcome!!!</h1>
+<br>
+<h3><a href="{{ url_for('login') }}">Please login</a></h3>
+{% endif %}
+
+
+
+
+{% endblock %}
+

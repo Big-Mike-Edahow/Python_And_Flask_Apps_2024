@@ -1,0 +1,30 @@
+<!-- edit.html -->
+
+{% extends 'base.html' %}
+{% block title %} Edit {% endblock %}
+
+{% block content %}
+
+<h1>Edit Post</h1>
+<form action="/edit/{{ post.id }}" method="POST">
+    <div class="form-group">
+        <label for="Title">Title: </label>
+        <input type="text" name="title" class="form-control" value="{{ post.title }}">
+    </div>
+
+    <div class="form-group">
+        <label for="blog_content">Content: </label>
+        <input type="text" name="content" class="form-control" value="{{ post.content }}">
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Update Post" class="mybtn">
+    </div>
+    <div class="form-group">
+        <small>
+            Go back to homepage? <a href="{{url_for('index')}}">Home</a>
+        </small>
+    </div>
+</form>
+
+{% endblock %}
+

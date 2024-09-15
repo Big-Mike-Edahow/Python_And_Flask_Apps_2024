@@ -1,0 +1,35 @@
+<!-- view.html -->
+
+{% extends 'base.html' %}
+{% block title %} View {% endblock %}
+
+{% block content %}
+<form action="/view/{{ post.id }}" method='POST'>
+    <article class="view-article">
+        <div class="form-group">
+            <h1> {{ post.title }} </h1>
+        </div>
+        <div class="form-group">
+            <h3> {{ post.content }} </h3>
+        </div>
+        <div class="form-group">
+            <h3> By {{ post.author }} at {{ post.created }} </h3>
+        </div>
+    </article>
+    <div class="form-group">
+        {% if current_user.username == post.author and current_user.is_authenticated %}
+        <div class="form-group">
+            <a href="/edit/{{ post.id }}" class="mybtn">Edit Post</a>
+            <a href="/delete/{{ post.id }}" class="mybtn">Delete Post</a>
+        </div>
+        {% endif %}
+        <div>
+            <small class="form-group">
+                Go back to homepage? <a href="{{ url_for('index') }}">Home</a>
+            </small>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
+
