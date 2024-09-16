@@ -5,31 +5,24 @@
 
 {% block content %}
 
-<form action="{{url_for('login')}}" method="POST">
-    <div class="form-group">
-        <h1>Login</h1>
-    </div>
-    <div class="form-group">
-        <label for="Username">Username:</label>
-        <input type="text" name="username" class="form-control" required>
-    </div>
-    <div class="form-group">
-        <label for="Password">Password:
-            <input type="password" name="password" class="form-control" required>
-        </label>
-    </div>
-    <small class="form-group">
-        Forgot Password? <a href="{{url_for('profile')}}" class="">Reset here</a>
-    </small>
-    <div class="form-group">
-        <input type="submit" value="Login" class="mybtn">
-    </div>
-    <div class="form-group">
-        <small>
-            Don't have an account? <a href="{{url_for('register')}}">Create one</a>
-        </small>
-    </div>
-</form>
+<section class="center">
+    <h1 class="headline-h1">Login 👤</h1>
+    <br>
+    <form action="{{url_for('login')}}" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+        <br>
+        <input class="form-button" type="submit" value="Login">
+        <br>
+    </form>
+    <aside>
+        <p>Don't have an account? </p>
+        <br>
+        <a class="button" href="{{url_for('register')}}">Register</a>
+    </aside>
+</section>
 
 {% endblock %}
-

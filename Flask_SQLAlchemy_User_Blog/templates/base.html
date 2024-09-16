@@ -14,25 +14,23 @@
 
 <body>
     <nav>
-        <div class="logo">
-            <a href="/">
-                <h2>FlaskBlog!</h2>
-            </a>
-        </div>
-        <div class="nav-item">
+        <h1><a href="/">FlaskBlog!</a></h1>
+        <div class="nav-items">
             {% if current_user.is_authenticated %}
-            <a href="{{url_for('index')}}">Home</a>
-            <a href="{{url_for('profile')}}">Profile</a>
-            <a href="{{url_for('logout')}}">Logout</a>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('profile') }}">Profile</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href="{{ url_for('about') }}">About</a>
 
             {% else %}
-            <a href="{{url_for('index')}}">Home</a>
-            <a href="{{url_for('register')}}">Register</a>
-            <a href="{{url_for('login')}}">Log in</a>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('register') }}">Register</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('about') }}">About</a>
             {% endif %}
         </div>
     </nav>
-    <main class="container">
+    <main>
         {% block content %}
 
 

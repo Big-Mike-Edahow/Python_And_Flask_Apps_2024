@@ -5,26 +5,25 @@
 
 {% block content %}
 
-<h1>Edit Post</h1>
-<form action="/edit/{{ post.id }}" method="POST">
-    <div class="form-group">
+<section class="center">
+    <h1 class="headline-h1">Edit Post ✏️</h1>
+    <br>
+    <form action="/edit/{{ post.id }}" method="POST">
         <label for="Title">Title: </label>
-        <input type="text" name="title" class="form-control" value="{{ post.title }}">
-    </div>
-
-    <div class="form-group">
+        <input type="text" name="title" value="{{ post.title }}">
+        <br>
         <label for="blog_content">Content: </label>
-        <input type="text" name="content" class="form-control" value="{{ post.content }}">
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Update Post" class="mybtn">
-    </div>
-    <div class="form-group">
-        <small>
-            Go back to homepage? <a href="{{url_for('index')}}">Home</a>
-        </small>
-    </div>
-</form>
+        <input type="text" name="content" value="{{ post.content }}">
+        <br>
+        <input class="form-button" type="submit" value="Update Post">
+        <br><br>
+    </form>
+    <aside>
+        <p>Go back to homepage? </p>
+        <br>
+        <a class="button" href="{{ url_for('index') }}">🔙 Home</a>
+    </aside>
+</section>
 
 {% endblock %}
 

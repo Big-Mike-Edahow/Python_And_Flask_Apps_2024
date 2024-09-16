@@ -5,26 +5,19 @@
 
 {% block content %}
 
-<h1>Create new post</h1>
-<form action="{{url_for('create')}}" method="POST">
-    <div class="form-group">
+<section class="center">
+    <h1 class="headline-h1">Create new post ✍️</h1>
+    <br>
+    <form action="{{url_for('create')}}" method="POST">
         <label for="Title">Title: </label>
         <input type="text" name="title" class="form-control" required>
-    </div>
-
-    <div class="form-group">
-        <label for="content">Content: </label><br>
-        <textarea class="form-control" name="content" rows="5" cols="40" required></textarea>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Add Post" class="mybtn">
-    </div>
-    <div>
-        <small>
-            Go back to homepage? <a href="{{url_for('index')}}">Home</a>
-        </small>
-    </div>
-</form>
+        <br>
+        <label for="content">Content: </label>
+        <textarea name="content" rows="5" cols="40" required></textarea>
+        <br><br>
+        <input class="form-button" type="submit" value="Add Post">
+    </form>
+</section>
 
 {% endblock %}
 

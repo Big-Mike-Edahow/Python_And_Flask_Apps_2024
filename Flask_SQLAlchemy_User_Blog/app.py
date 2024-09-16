@@ -129,6 +129,10 @@ def delete(id):
     db.session.commit()
     return redirect(url_for('index'))
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/logout')
 def logout():
     logout_user()
