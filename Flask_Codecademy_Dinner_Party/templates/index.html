@@ -1,0 +1,36 @@
+<!-- index.html -->
+
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <span class="flex-container">
+        {% if current_user.is_authenticated %}
+        <h1 class="headline-h1"><strong>Hi {{ current_user.username }}! 👋</strong></h1>
+        {% endif %}
+        <h1 class="headline-h1">Dinner Party Guests 👥</h1>
+    </span>
+    <br><br>
+    <section class="guest">
+        {% if current_users|length == 0 %}
+        <p style="color:blue;"> Ooops. There are no users currently in your database. Make sure to add them first. </p>
+        {% endif %}
+
+        {% for user in current_users %}
+        <p>{{ user.email }}</p>
+        {% endfor %}
+    </section>
+    <br><br>
+    {% if current_user.is_authenticated %}
+    <h2>You are logged in. 🖥️</h2>
+    {% else %}
+    <span class="flex-container">
+        <h3><a class="button" href="{{ url_for('register') }}">Register 🪶</a></h3>
+        <h3><a class="button" href="{{ url_for('login') }}">Login 🖥️</a></h3>
+    </span>
+    {% endif %}
+</section>
+
+{% endblock %}

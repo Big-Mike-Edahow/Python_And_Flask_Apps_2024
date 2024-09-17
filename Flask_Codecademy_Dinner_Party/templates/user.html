@@ -1,0 +1,59 @@
+<!-- user.html -->
+
+{% extends 'base.html' %}
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+
+<section class="grid-container">
+    <div>
+        <h1 class="headline-h1">Welcome back {{current_user.username}}!</h1>
+        <br>
+        <h1>List of dinner parties you are currently planning:</h1>
+        <br>
+        {% for party in dinner_parties %}
+        <p>&#128205;{{ party.date }} - {{ party.venue }} - {{ party.main_dish }} - {{ party.number_seats }} People</p>
+        <br>
+        {% endfor %}
+    </div>
+    <div>
+        <h1 class="blue">Plan a new dinner party:</h1>
+        <br>
+        <form action="/profile/{{current_user.username}}" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.date.label }}<br>
+                {{ form.date(size=32) }}<br>
+                {% for error in form.date.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.venue.label }}<br>
+                {{ form.venue(size=32) }}<br>
+                {% for error in form.venue.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.main_dish.label }}<br>
+                {{ form.main_dish(size=32) }}<br>
+                {% for error in form.main_dish.error %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.number_seats.label }}<br>
+                {{ form.number_seats(size=32) }}<br>
+                {% for error in form.number_seats.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <br>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
+

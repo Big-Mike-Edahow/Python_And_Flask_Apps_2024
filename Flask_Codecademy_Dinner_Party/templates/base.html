@@ -1,0 +1,36 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/images/favicon.ico" type="image/png" rel="shortcut icon">
+    <link href="../static/css/style.css" type="text/css" rel="stylesheet">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Dinner Party! 👨‍🍳</h1>
+        <a href="{{ url_for('index') }}">Home 🍽️</a>
+        {% if current_user.is_authenticated %}
+        <a href="/profile/{{ current_user.username }}">Profile 👤</a>
+        <a href="/rsvp/{{ current_user.username }}">RSVP 📧</a>
+        {% endif %}
+        <a href="{{ url_for('about') }}">About ❓</a>
+        <a href="{{ url_for('logout' )}}">Logout ➡️</a>
+    </nav>
+    <main>
+        {% block content %}
+        
+        {% endblock %}
+    </main>
+    <footer>
+        <p>Powered by <a href='https://python.org/'>Python 💪</a></p>
+    </footer>
+</body>
+
+</html>
+

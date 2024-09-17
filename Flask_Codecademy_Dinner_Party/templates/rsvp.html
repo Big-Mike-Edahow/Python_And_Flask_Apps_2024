@@ -1,0 +1,50 @@
+<!-- rsvp.html -->
+
+{% extends 'base.html' %}
+{% block title %} RSVP {% endblock %}
+
+{% block content %}
+
+<section class="grid-container">
+    <div>
+        <h1 class="center"><strong>Hi {{ current_user.username }}! 👋 </strong>Dinner Parties</h1>
+        <br>
+        <hr><br>
+
+        <div class="messages">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+
+        {% if dinner_parties|length == 0 %}
+        <p style="color:blue;"> Ooops. There are no dinner parties currently planned. Add one! </p>
+        {% endif %}
+
+        {% for party in dinner_parties %}
+        <p>{{ party.date }} - {{ party.venue }} - {{ party.main_dish }} - ID: {{ party.id }} - {{ party.attendees }}</p>
+        <br>
+        {% endfor %}
+    </div>
+    <div>
+        <h1 class="blue">RSVP to a Party:</h1>
+        <br>
+        <form action="/rsvp/{{ current_user.username }}" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.party_id.label }}<br>
+                {{ form.party_id(size=32) }}<br>
+                {% for error in form.party_id.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
