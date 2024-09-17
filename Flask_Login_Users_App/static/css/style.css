@@ -1,0 +1,109 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: snow;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    height: 80px;
+    background-color: rgb(225, 212, 231);
+    border-bottom: 2px solid black;
+}
+
+nav>a {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 10px;
+    padding: 0 10px;
+    color: black;
+    text-decoration: none;
+}
+
+nav>h1>a {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+}
+
+main {
+    margin-top: 30px;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    color: green;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: flex-start;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+form label {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: black;
+}
+
+form input {
+    width: auto;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin: 2px 5px;
+    padding: 2px 5px;
+    color: black;
+    background: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+form textarea {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin: 2px 5px;
+    padding: 2px 5px;
+    color: black;
+    background: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.form-button {
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 2px 5px;
+    color: black;
+    background-color: rgb(219, 231, 234);
+    border: 2px solid black;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px black;
+    text-decoration: none;
+}
+
+.form-button:active {
+    box-shadow: inset 2px 2px 2px black;
+}
