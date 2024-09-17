@@ -11,6 +11,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config["SECRET_KEY"] = "Fall is in the air."
 
 db = SQLAlchemy()
+db.init_app(app)
  
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -23,8 +24,7 @@ class Users(UserMixin, db.Model):
     password = db.Column(db.String(250),
                          nullable=False)
  
-# Initialize app with extension
-db.init_app(app)
+
  
 # Creating Database with App Context
 def create_db():
