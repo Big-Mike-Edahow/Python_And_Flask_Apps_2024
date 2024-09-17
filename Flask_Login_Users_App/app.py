@@ -24,8 +24,6 @@ class Users(UserMixin, db.Model):
     password = db.Column(db.String(250),
                          nullable=False)
  
-
- 
 # Creating Database with App Context
 def create_db():
     with app.app_context():
