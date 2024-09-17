@@ -6,7 +6,6 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import current_user, login_user, LoginManager, UserMixin, logout_user, login_required
-from datetime import datetime
 
 app = Flask(__name__)
 
@@ -51,7 +50,7 @@ def index():
     posts = Posts.query.all()
     return render_template ("index.html", posts=posts)
 
-@app.route('/view/<int:id>', methods = ['GET'])
+@app.route('/view/<int:id>')
 def view_blog(id):
     post = Posts.query.get_or_404(id)
     return render_template('view.html', post=post)
@@ -94,13 +93,14 @@ def login():
 
 @app.route('/register', methods = ['GET', 'POST'])
 def register():
-    if request.method == 'POST' :
+    if request.method == 'GET':
+        return render_template('register.html')
+    elif request.method == 'POST' :
         first_name = request.form.get('first_name')
         last_name = request.form.get('last_name')
         username = request.form.get('username')
         email = request.form.get('email')
         password = request.form.get('password')
-        confirm = request.form.get('confirm')
 
         user =  Users.query.filter_by(username= username).first()
         if user:
@@ -114,14 +114,14 @@ def register():
         db.session.add(new_user)
         db.session.commit()
         return redirect(url_for('login'))
-    return render_template('register.html')
+    
 
 @app.route('/profile')
 @login_required
 def profile():
     return render_template('profile.html')
 
-@app.route('/delete/<int:id>', methods = ['GET'])
+@app.route('/delete/<int:id>')
 @login_required
 def delete(id):
     post = Posts.query.get_or_404(id)
