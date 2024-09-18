@@ -1,0 +1,35 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Welcome to Flask Notes! 🗒️</h1>
+    <br>
+    <h1>Add a New Note: ⬇️</h1>
+    <form action="/" method="post">
+        <input type="text" name="content" placeholder="Note content. You can use Markdown syntax">
+        <br><br>
+        <input class="form-button" type="submit" value="Submit">
+    </form>
+    <br>
+    {% for note in notes %}
+    <div class="notes">
+        <p>
+            <span class="title">
+                <b>#{{ note['id'] }}</b>
+                <i>{{ note['created'] }}</i>
+                <a class="button" href="{{ url_for('delete', id=note['id']) }}">Delete</a>
+            </span>
+        </p>
+        <br>
+        <p>{{ note['content'] | safe }}</p>
+        <br>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}
+

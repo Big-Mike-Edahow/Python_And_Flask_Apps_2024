@@ -1,0 +1,163 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: floralwhite;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    background-color:rgb(233, 180, 233);
+    border-bottom: 2px solid black;
+    z-index: 1;
+}
+
+nav>h1 {
+    font-size: 36px;
+    font-weight: bold;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    padding-left: 50px;
+}
+
+nav>h1>a {
+    color: black;
+    text-decoration: none;
+}
+
+nav>a {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 5px;
+    padding: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+main {
+    position: relative;
+    top: 80px;
+    margin: 20px 10px 100px 10px;
+    padding: 0 30px;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headline-h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+hr {
+    width: 75%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+figure>img {
+    border: 2px solid black;
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px black;
+}
+
+figcaption {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 3px;
+    padding: 3px;
+}
+
+form {
+    margin-top: 5px;
+    padding-top: 5px;
+}
+
+form input[type=text] {
+    width: 700px;
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 2px 5px;
+    padding: 2px 5px;
+    color: black;
+    background: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+form input[type=submit] {
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 2px 5px;
+    color: black;
+    background-color: rgb(219, 231, 234);
+    border: 2px solid black;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+form input[type=submit]:active {
+    border: 2px solid black;
+    box-shadow: inset 2px 2px 2px black;
+}
+
+.notes {
+    width: 75%;
+    margin: 0 auto 15px auto;
+    padding: 0 0 15 0;
+    background-color: rgb(201, 217, 232);
+    border: 2px solid rgb(228, 77, 160);
+    border-radius: 3px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    background-color: rgb(153, 231, 153);
+    border-bottom: 1px solid black;
+}
+
+.button {
+    font-size: .7em;
+    font-weight: 600;
+    padding: 2px 5px;
+    color: black;
+    background-color: rgb(219, 231, 234);
+    border: 2px solid black;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.button:active {
+    border: 2px solid black;
+    box-shadow: inset 2px 2px 2px black;
+}
