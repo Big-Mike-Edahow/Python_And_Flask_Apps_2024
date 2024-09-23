@@ -1,0 +1,32 @@
+<!-- index.html -->
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Big Mike's Fruit Market! 🍓🍇🍎</h1>
+    <br><br>
+    <table class="center">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Fruit</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fruit in fruits %}
+            <tr>
+                <td>{{ fruit.id }}</td>
+                <td>{{ fruit.name }} </td>
+                <td>${{ fruit.price }} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+{% endblock %}
+
