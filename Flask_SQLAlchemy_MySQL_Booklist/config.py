@@ -2,8 +2,8 @@
 
 import pymysql
 
-username = 'mike'
-password = '5454160s'
+username = 'foo'
+password = 'bar'
 hostname = 'localhost'
 db_name = 'books_db'
 
