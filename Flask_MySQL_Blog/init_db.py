@@ -4,8 +4,8 @@ import pymysql
 
 conn = pymysql.connect(
     host="localhost",
-    user="mike",
-    password="5454160s"
+    user="foo",
+    password="bar"
 )
 
 curs = conn.cursor()

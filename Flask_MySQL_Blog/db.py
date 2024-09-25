@@ -5,8 +5,8 @@ import pymysql
 def getDB():
     conn = pymysql.connect(
         host="localhost",
-        user="mike",
-        password="5454160s",
+        user="foo",
+        password="bar",
         database="my_db"
     )
     return conn
