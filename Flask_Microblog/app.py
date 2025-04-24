@@ -60,7 +60,7 @@ def view_blog(id):
 def create():
     if request.method == 'GET':
         return render_template('create.html')
-    if request.method == 'POST':        
+    elif request.method == 'POST':        
         title = request.form.get('title')
         author = current_user.username
         content = request.form.get('content')
