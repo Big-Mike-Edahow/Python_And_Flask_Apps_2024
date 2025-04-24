@@ -1,0 +1,44 @@
+<!-- index.html -->
+
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+{% if current_user.is_authenticated %}
+
+<section class="center">
+    <h1 class="headline-h1"> Hi {{current_user.username}}! 👋 You are logged in. 🖥️</h1>
+    <br>
+    <h2><a class="button" href="{{ url_for('create') }}">New Post 🖊️</a></h2>
+    <br>
+    <hr>
+</section>
+
+{% for post in posts %}
+<section class="center">
+    <article>
+        <h2> {{ post.title }} </h2>
+        <p> {{ post.content | truncate(80, True) }} </p>
+        <span class="flex-container">
+            <h3> By {{ post.author }} on {{ post.created }} </h3>
+            <a class="button" href="/view/{{ post.id }}"> View Post</a>
+        </span>
+    </article>
+</section>
+{% endfor %}
+
+{% else %}
+<section class="center">
+    <h1 class="headline-h1">Welcome!!!</h1>
+    <br>
+    <figure></figure>
+    <img src="../static/images/Profile_Pic.jpg" alt="Profile Pic" width="320px">
+    </figure>
+    <br><br>
+    <a class="button" href="{{ url_for('login') }}">Please login</a>
+</section>
+{% endif %}
+
+{% endblock %}
+

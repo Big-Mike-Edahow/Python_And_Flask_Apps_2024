@@ -1,0 +1,279 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    background-color: rgb(73, 55, 55);
+    padding: 5px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+}
+
+nav a {
+    float: left;
+    text-align: right;
+    color: #000;
+    text-decoration: wheat;
+    font-size: 18px;
+    font-size: 19px;
+    padding: 5px 5px;
+    border: 0;
+    transition: all 1.2s;
+}
+
+nav > h1 > a {
+    font-size: 2em;
+    font-weight: 600;
+    color: white;
+}
+
+.nav-items a {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 10px;
+    padding: 5px 10px;
+    color: white;
+}
+
+.nav-items a:hover {
+    transition: all .5s;
+    background-color: rgb(16, 15, 13);
+    border-radius: 35px;
+}
+
+body {
+    background-color: mintcream;
+}
+
+main {
+    margin: 30px;
+    padding: 0 20px;
+    min-height: 100vh;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.headline-h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+hr {
+    width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    text-decoration: underline;
+    margin: 0 3px;
+}
+
+.button {
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 2px 5px;
+    color: black;
+    background-color: rgb(219, 231, 234);
+    border: 2px solid black;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px black;
+    text-decoration: none;
+}
+
+.button:active {
+    box-shadow: inset 2px 2px 2px black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: flex-start;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+form label {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: black;
+}
+
+form input {
+    width: auto;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin: 2px 5px;
+    padding: 2px 5px;
+    color: black;
+    background: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+form textarea {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin: 2px 5px;
+    padding: 2px 5px;
+    color: black;
+    background: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.form-button {
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 2px 5px;
+    color: black;
+    background-color: rgb(219, 231, 234);
+    border: 2px solid black;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px black;
+    text-decoration: none;
+}
+
+.form-button:active {
+    box-shadow: inset 2px 2px 2px black;
+}
+
+figure > img {
+    border: 2px solid black;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px black;
+}
+
+figure > figcaption {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 3px;
+    padding: 3px;
+}
+
+aside {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto 10px auto;
+    padding: 10px 10px;
+    background-color: rgb(245, 236, 238);
+    border: 2px solid lightslategray;
+    border-radius: 10px;
+}
+
+article  p {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin: 0 5px;
+    padding: 2 5px;
+    width: 80%;
+}
+
+article a {
+    margin: 20px;
+}
+
+.register-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+}
+
+.grid-container {
+    position: relative;
+    top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.outer {
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid Black;
+    background-color: rgb(236, 223, 236);
+}
+
+.inner {
+    display: table-cell;
+    width: 230px;
+    height: 230px;
+    text-align: center;
+    vertical-align: middle;
+    font: bold 4em sans-serif;
+}
+
+.drop {
+    box-shadow: 10px 10px 10px violet;
+}
+
+.drop>div.inner {
+    text-shadow: 2px 2px violet;
+}
+
+.glow {
+    box-shadow: 0 0 10px 10px violet;
+}
+
+.glow>.inner {
+    color: White;
+    text-shadow: 2px 2px 4px Black;
+}
+
+.inset {
+    box-shadow: 10px 10px 30px violet inset;
+}
+
+.inset>.inner {
+    color: white;
+    text-shadow: -1px 0 Black, 0 1px Black, 1px 0 Black, 0 -1px Black;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 60px;
+    padding: 20px;
+    background-color: rgb(73, 55, 55);
+    color: white;
+}

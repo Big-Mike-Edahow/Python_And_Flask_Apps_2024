@@ -1,0 +1,29 @@
+<!-- login.html -->
+
+{% extends 'base.html' %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <h1 class="headline-h1">Login 👤</h1>
+    <br>
+    <form action="{{url_for('login')}}" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+        <br>
+        <input class="form-button" type="submit" value="Login">
+        <br>
+    </form>
+    <aside>
+        <p>Don't have an account? </p>
+        <br>
+        <a class="button" href="{{url_for('register')}}">Register</a>
+    </aside>
+</section>
+
+{% endblock %}
+

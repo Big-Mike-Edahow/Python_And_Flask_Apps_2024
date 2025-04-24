@@ -1,0 +1,22 @@
+<!-- profile.html -->
+
+{% extends 'base.html' %}
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+
+<section class="center">
+    <figure>
+        <img src="../static/images/Profile_Pic.jpg" alt="Profile Pic" width="320px">
+        <figcaption>{{current_user.first_name}} {{current_user.last_name}}</figcaption>
+    </figure>
+    <aside>
+        <p>Username : {{current_user.username}}</p>
+        <p>Email : {{current_user.email}}</p>
+        <br>
+        <a class="button" href="{{ url_for('index') }}">🔙 Home</a>
+    </aside>
+</section>
+
+{% endblock %}
+
