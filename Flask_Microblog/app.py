@@ -114,7 +114,6 @@ def register():
         db.session.add(new_user)
         db.session.commit()
         return redirect(url_for('login'))
-    
 
 @app.route('/profile')
 @login_required
@@ -129,16 +128,16 @@ def delete(id):
     db.session.commit()
     return redirect(url_for('index'))
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('index'))
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
 if __name__ == "__main__":
     create_db()
     app.run(debug=True)
-
